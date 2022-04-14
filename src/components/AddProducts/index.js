@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import {client} from "client";
 
 export function AddProductsForm() {
   const [category, setCategory] = useState("");
@@ -9,8 +10,17 @@ export function AddProductsForm() {
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
 
+  const addProducts = async (category, name, description, image, price, city, country) => {
+  try {
+  const response = await client.post('product/add', {category, name, description, image, price, city, country})
+  } catch (error) {
+      console.log(error)
+  }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    addProducts(category, name, description, image, price, city, country)
   };
 
   return (
