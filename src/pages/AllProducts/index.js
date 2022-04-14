@@ -1,7 +1,9 @@
+import { AllProductsForm } from "components"
+
 export function AllProducts() {
     return (
       <div>
-      <h1> "Bye" </h1>
+      <AllProductsForm/>
     </div>
     )
     }

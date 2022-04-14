@@ -22,6 +22,12 @@ export function AddProductsForm() {
     e.preventDefault();
     addProducts(category, name, description, image, price, city, country);
     setName("")
+    setCategory("")
+    setDescription("")
+    setImage("")
+    setPrice("")
+    setCity("")
+    setCountry("")
   };
 
   return (
