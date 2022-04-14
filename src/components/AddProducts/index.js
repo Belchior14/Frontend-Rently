@@ -20,7 +20,8 @@ export function AddProductsForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addProducts(category, name, description, image, price, city, country)
+    addProducts(category, name, description, image, price, city, country);
+    setName("")
   };
 
   return (

@@ -16,7 +16,7 @@ export function SignupForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>FirstName:</label>
+      <label>First Name:</label>
       <input
         type="text"
         id="firstName"
@@ -25,7 +25,7 @@ export function SignupForm() {
           setFirstName(e.target.value);
         }}
       />
-      <label>LastName:</label>
+      <label>Last Name:</label>
       <input
         type="text"
         id="lastName"
