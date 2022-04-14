@@ -3,11 +3,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home , Login, Signup , NotFound } from "pages";
+import { Home , Login, Signup , NotFound, AddProducts, AllProducts } from "pages";
 import { Navbar } from "components";
 import { AuthContextProvider } from "context";
-
-
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,6 +16,8 @@ ReactDOM.render(
       <Route path="/" element={<Home/>} />
       <Route path="/signup" element={<Signup/>} />
       <Route path="/login" element={<Login/>} />
+      <Route path="/product" element={<AllProducts/>} />
+      <Route path="/product/add" element={<AddProducts/>} />
       <Route path="*" element={<NotFound/>} />
     </Routes>
   
