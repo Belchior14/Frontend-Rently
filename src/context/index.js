@@ -1,13 +1,19 @@
-import { createContext, useContext, useState } from "react";
+import { createContext,  useState } from "react";
 import { client } from "client";
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
+  const navigate = useNavigate();
   const [user, setUser] = useState(null);
 
   const saveToken = (token) => {
     localStorage.setItem("token", `Bearer ${token}`);
+  };
+
+  const deleteToken = () => {
+    localStorage.removeItem("token");
   };
 
   //function to do the signup
@@ -34,10 +40,17 @@ export function AuthContextProvider({ children }) {
     }
   };
 
+  const logout = () => {
+    deleteToken();
+    setUser(null);
+    navigate("/login");
+  };
+
   const value = {
     user,
     signup,
     login,
+    logout,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
