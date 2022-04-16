@@ -1,29 +1,36 @@
-import { useState, useEffect } from "react";
-import { client } from "client"
+import { AuthContext } from "context";
+import { useContext, useState, useEffect } from "react";
+import { client } from "client";
 
 export function SingleProductShow() {
-    const [products, setProducts] = useState([]);
-  
-    const getProducts = () => {
-      client
-        .get("/product/:id")
-        .then((response) => setProducts(response.data))
-        .catch((error) => console.log(error));
-    };
-  
-    useEffect(() => {
-      getProducts();
-    }, []);
-    console.log(setProducts)
-    return (
+  const [product, setProduct] = useState(null);
+
+  const oneProduct = async (name) => {
+    try {
+      const response = await client.get(
+        `/product/${window.location.href.split("/").at(-1)}`,
+        {
+          name,
+        }
+      );
+      setProduct(response.data.product);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    oneProduct();
+  }, []);
+
+  return (
     <div>
-        {products.map((product) => {
-            return(
-                <div>
-                    <h3>{product.name}</h3>
-                </div>
-            )
-        })}
+      {product ? (
+        <div>
+          <h3>{product.name}</h3>
+          <h3>{product.price}</h3>
+        </div>
+      ) : null}
     </div>
- )
+  );
 }

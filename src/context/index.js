@@ -7,6 +7,7 @@ export const AuthContext = createContext();
 export function AuthContextProvider({ children }) {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
+ 
 
   const saveToken = (token) => {
     localStorage.setItem("token", `Bearer ${token}`);
@@ -41,6 +42,8 @@ export function AuthContextProvider({ children }) {
     }
   };
 
+  
+
   const logout = () => {
     deleteToken();
     setUser(null);
@@ -52,6 +55,7 @@ export function AuthContextProvider({ children }) {
     signup,
     login,
     logout,
+ 
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
