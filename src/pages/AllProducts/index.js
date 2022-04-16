@@ -1,9 +1,9 @@
-import { AllProductsForm } from "components"
+import { AllProductsShow } from "components"
 
 export function AllProducts() {
     return (
       <div>
-      <AllProductsForm/>
+      <AllProductsShow/>
     </div>
     )
     }

@@ -3,7 +3,7 @@ import { client } from "client";
 import { useState, useEffect } from "react";
 import {  useNavigate } from "react-router-dom";
 
-export function AllProductsForm() {
+export function AllProductsShow() {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
 
