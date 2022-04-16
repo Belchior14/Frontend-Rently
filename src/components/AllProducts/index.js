@@ -1,7 +1,7 @@
 import axios from "axios";
 import { client } from "client";
 import { useState, useEffect } from "react";
-import {  useNavigate } from "react-router-dom";
+import {  useNavigate, Link } from "react-router-dom";
 
 export function AllProductsShow() {
   const [products, setProducts] = useState([]);
@@ -23,7 +23,7 @@ export function AllProductsShow() {
       {products.map((product) => {
         return (
           <div>
-            <h3>{product.name}</h3>
+            {<Link to={`/product/${product._id}`}> <h3>{product.name}</h3> </Link>}
            {/*  <h3>{product.country}</h3>
             <h3>{product.city}</h3>
             <h3>{product.price}</h3>

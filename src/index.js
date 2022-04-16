@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Login, Signup , NotFound, AddProducts, AllProducts, Profile } from "pages";
+import { Home, Login, Signup , NotFound, AddProducts, AllProducts, Profile, SingleProduct } from "pages";
 import { PrivateRoute } from "components";
 
 import { AuthContextProvider } from "context";
@@ -20,6 +20,7 @@ ReactDOM.render(
       <Route path="/signup" element={<Signup/>} />
       <Route path="/login" element={<Login/>} />
       <Route path="/product" element={<AllProducts/>} />
+      <Route path="/product/:id" element={<SingleProduct/>} />
       <Route path="/product/add" element={<PrivateRoute><AddProducts /></PrivateRoute>} />
       <Route path="profile/:id" element={<PrivateRoute><Profile/></PrivateRoute>} />
       <Route path="*" element={<NotFound/>} />

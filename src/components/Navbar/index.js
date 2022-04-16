@@ -11,7 +11,6 @@ export function Navbar() {
       <Link to="/product"> Products </Link>
       <Link to="/product/add"> Add Products </Link>
       {user && <Link to={`/profile/${user._id}`}> Profile </Link>}
-
       <Link to="/signup"> Signup </Link>
       <Link to="/login"> Login </Link>
       {user && <button onClick={logout}>Logout</button>}
