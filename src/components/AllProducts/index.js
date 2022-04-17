@@ -18,24 +18,29 @@ export function AllProductsShow() {
   }, []);
 
   return (
-    <div>
-      {products.map((product) => {
-        return (
-          <div>
-            {
-              <Link to={`/product/${product._id}`}>
-                {" "}
-                <h3 key={product.id}>{product.name}</h3>
+    <div className="theProducts">
+      <h1>Products</h1>
+      <div className="allProfileProducts">
+        {products.map((product) => {
+          return (
+            <div className="profileProduct">
+              <Link
+                className="profileProductName"
+                to={`/product/${product._id}`}
+              >
+                <div>
+                  <h3>{product.name}</h3>
+                  <img
+                    className="productImg"
+                    src={product.image}
+                    alt={product.image}
+                  />
+                </div>
               </Link>
-            }
-            {/*  <h3>{product.country}</h3>
-            <h3>{product.city}</h3>
-            <h3>{product.price}</h3>
-            <h3>{product.description}</h3> */}
-            {/* <h3 onClick={navigate("/profile/:id")} >{product.user}</h3> */}
-          </div>
-        );
-      })}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

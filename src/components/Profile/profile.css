@@ -1,0 +1,40 @@
+.profileImg{
+    width: 150px;
+}
+
+.userInfo{
+    margin: 15px;
+}
+
+.productImg{
+width: 150px;
+}
+
+.theProducts{
+    margin: 15px;
+}
+
+.allProfileProducts{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.profileProduct{
+    border: 2px solid rgb(128, 105, 0);
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.profileProduct:hover{
+    cursor: pointer;
+}
+
+.profileProductName{
+    text-decoration: none;
+    color: rgb(202, 74, 15);
+}
