@@ -1,4 +1,4 @@
-import { createContext,  useState } from "react";
+import { createContext, useState } from "react";
 import { client } from "client";
 import { useNavigate } from "react-router-dom";
 
@@ -7,7 +7,6 @@ export const AuthContext = createContext();
 export function AuthContextProvider({ children }) {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
- 
 
   const saveToken = (token) => {
     localStorage.setItem("token", `Bearer ${token}`);
@@ -26,9 +25,9 @@ export function AuthContextProvider({ children }) {
       lastName,
       username,
     });
-    /* navigate("/login"); */
+    navigate("/login");
   };
-
+  //function to do the login
   const login = async (email, password) => {
     try {
       const response = await client.post("/auth/login", {
@@ -40,14 +39,13 @@ export function AuthContextProvider({ children }) {
     } catch (error) {
       console.log(error);
     }
+    navigate("/");
   };
-
-  
-
+  //function to do the logout
   const logout = () => {
     deleteToken();
     setUser(null);
-    navigate("/login");
+    navigate("/");
   };
 
   const value = {
@@ -55,7 +53,6 @@ export function AuthContextProvider({ children }) {
     signup,
     login,
     logout,
- 
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

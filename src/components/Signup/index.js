@@ -1,5 +1,7 @@
 import { AuthContext } from "context";
 import { useContext, useState } from "react";
+import "./signup.css";
+import { Link } from "react-router-dom";
 
 export function SignupForm() {
   const { signup } = useContext(AuthContext);
@@ -15,53 +17,60 @@ export function SignupForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>First Name:</label>
-      <input
-        type="text"
-        id="firstName"
-        value={firstName}
-        onChange={(e) => {
-          setFirstName(e.target.value);
-        }}
-      />
-      <label>Last Name:</label>
-      <input
-        type="text"
-        id="lastName"
-        value={lastName}
-        onChange={(e) => {
-          setLastName(e.target.value);
-        }}
-      />
-      <label>Username:</label>
-      <input
-        type="text"
-        id="username"
-        value={username}
-        onChange={(e) => {
-          setUsername(e.target.value);
-        }}
-      />
-      <label>Email:</label>
-      <input
-        type="email"
-        id="email"
-        value={email}
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-      />
-      <label>Password:</label>
-      <input
-        type="password"
-        id="password"
-        value={password}
-        onChange={(e) => {
-          setPassword(e.target.value);
-        }}
-      />
-      <button type="onSubmit">Signup</button>
-    </form>
+    <div className="signupDiv">
+      <div>
+        <form className="signupForm" onSubmit={handleSubmit}>
+          <label>First Name:</label>
+          <input
+            type="text"
+            id="firstName"
+            value={firstName}
+            onChange={(e) => {
+              setFirstName(e.target.value);
+            }}
+          />
+          <label>Last Name:</label>
+          <input
+            type="text"
+            id="lastName"
+            value={lastName}
+            onChange={(e) => {
+              setLastName(e.target.value);
+            }}
+          />
+          <label>Username:</label>
+          <input
+            type="text"
+            id="username"
+            value={username}
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+          />
+          <label>Email:</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+          <label>Password:</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+          <button type="onSubmit">Signup</button>
+        </form>
+        <p>
+          Already have an account? <Link to="/login">Click here</Link>
+        </p>
+      </div>
+    </div>
   );
 }
