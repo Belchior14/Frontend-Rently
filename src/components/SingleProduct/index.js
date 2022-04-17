@@ -1,17 +1,14 @@
-import { AuthContext } from "context";
-import { useContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { client } from "client";
 
 export function SingleProductShow() {
   const [product, setProduct] = useState(null);
 
-  const oneProduct = async (name) => {
+  const oneProduct = async () => {
     try {
       const response = await client.get(
-        `/product/${window.location.href.split("/").at(-1)}`,
-        {
-          name,
-        }
+        `/product/${window.location.href.split("/").at(-1)}`
+      
       );
       setProduct(response.data.product);
     } catch (error) {
