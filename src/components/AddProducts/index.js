@@ -9,7 +9,7 @@ export function AddProductsForm() {
   const [price, setPrice] = useState("");
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
-
+  
   const addProducts = async (
     category,
     name,
@@ -83,7 +83,7 @@ export function AddProductsForm() {
         onChange={(e) => {
           setImage(e.target.value);
         }}
-      />
+      />      
       <label>Price:</label>
       <input
         type="number"
@@ -112,9 +112,6 @@ export function AddProductsForm() {
         }}
       />
       <button type="onSubmit">Add Product</button>
-      <p>{country}</p>
-      <p>{name}</p>
-      <p>{category}</p>
-    </form>
+      </form>
   );
 }
