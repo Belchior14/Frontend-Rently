@@ -1,46 +1,62 @@
-import { useContext, useState } from "react";
-import {client} from "client";
+import { useState } from "react";
+import { client } from "client";
 
 export function AddProductsForm() {
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("Others");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
-  const [price, setPrice] = useState("");  
+  const [price, setPrice] = useState("");
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
 
-  const addProducts = async (category, name, description, image, price, city, country) => {
-  try {
-  const response = await client.post('product/add', {category, name, description, image, price, city, country})
-  } catch (error) {
-      console.log(error)
-  }
+  const addProducts = async (
+    category,
+    name,
+    description,
+    image,
+    price,
+    city,
+    country
+  ) => {
+    try {
+      const response = await client.post("product/add", {
+        category,
+        name,
+        description,
+        image,
+        price,
+        city,
+        country,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     addProducts(category, name, description, image, price, city, country);
-    setName("")
-    setCategory("")
-    setDescription("")
-    setImage("")
-    setPrice("")
-    setCity("")
-    setCountry("")
+    setName("");
+    setCategory("");
+    setDescription("");
+    setImage("");
+    setPrice("");
+    setCity("");
+    setCountry("");
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <label>Category:</label>
-      <input
-        type="text"
-        id="category"
-        value={category}
-        onChange={(e) => {
-          setCategory(e.target.value);
-        }}
-      />
+      <select value={category} onChange={(e) => setCategory(e.target.value)}>
+        <option value="Technology">Technology</option>
+        <option value="Sports">Sports</option>
+        <option option="Home">Home</option>
+        <option option="Leisure">Leisure</option>
+        <option option="Others">Others</option>
+      </select>
+
       <label>Product Name:</label>
       <input
         type="text"
@@ -77,7 +93,7 @@ export function AddProductsForm() {
           setPrice(e.target.value);
         }}
       />
-       <label>City:</label>
+      <label>City:</label>
       <input
         type="text"
         id="city"
@@ -86,7 +102,7 @@ export function AddProductsForm() {
           setCity(e.target.value);
         }}
       />
-       <label>Country:</label>
+      <label>Country:</label>
       <input
         type="text"
         id="country"
@@ -96,6 +112,9 @@ export function AddProductsForm() {
         }}
       />
       <button type="onSubmit">Add Product</button>
+      <p>{country}</p>
+      <p>{name}</p>
+      <p>{category}</p>
     </form>
   );
 }
