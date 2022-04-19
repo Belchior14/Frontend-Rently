@@ -6,26 +6,62 @@ import { AddMoneyOption } from "components/AddMoney";
 import { AuthContext } from "context";
 
 export function ProfileShow() {
-  const [userProfile, setUserProfile] = useState(null);
-  const {user} = useContext(AuthContext)
+  const [userProfile, setUserProfile] = useState("null");
+  const { user } = useContext(AuthContext);
+  const [products, setProducts] = useState([]);
   const oneUser = async () => {
     try {
       const response = await client.get(
-       `/profile/${window.location.href.split("/").at(-1)}`
-); 
-setUserProfile(response.data)
-} catch (error) {
-      console.log(error)
+        `/profile/${window.location.href.split("/").at(-1)}`
+      );
+      setUserProfile(response.data);
+    } catch (error) {
+      console.log(error);
     }
   };
 
-  useEffect(() => { 
+  const getProducts = () => {
+    client
+      .get("/product")
+      .then((response) => setProducts(response.data))
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
     oneUser();
+    getProducts();
   }, []);
 
   return (
-    <div className="userInfo">
-
+    <div>
+      <h2>
+        {userProfile.firstName} {userProfile.lastName}{" "}
+        {user._id === userProfile._id ? user.money : null}{" "}
+      </h2>
+      <img src={userProfile.image} alt={userProfile.image} />
+      {user._id === userProfile._id ? <AddMoneyOption /> : null}
+      <h1>Products for rent</h1>
+      {products.map((product) => {
+        if (userProfile._id === product.user) {
+          return (
+            <div className="profileProduct">
+              <Link
+                className="profileProductName"
+                to={`/product/${product._id}`}
+              >
+                <div>
+                  <h3>{product.name}</h3>
+                  <img
+                    className="productImg"
+                    src={product.image}
+                    alt={product.image}
+                  />
+                </div>
+              </Link>
+            </div>
+          );
+        }
+      })}
     </div>
   );
 }

@@ -20,9 +20,6 @@ export function AddMoneyOption() {
 
   return (
     <div>
-      {/* {console.log(user)} */}
-      
-      <h1>{user.money}</h1>
       <button onClick={handleAddMoney}>Charge your account</button>
     </div>
   );
