@@ -6,9 +6,19 @@ import { Link } from "react-router-dom";
 import { AddMoneyOption } from "components/AddMoney";
 
 export function ProfileShow() {
-  const { user } = useContext(AuthContext);
+  const [user, setUser] = useState("Hello");
+  const [products, setProducts] = useState("hello");
 
-  const [products, setProducts] = useState([]);
+  const oneUser = async () => {
+    try {
+      const response = await client.get(
+       `/profile/${window.location.href.split("/").at(-1)}`
+); 
+setUser(response.data)
+} catch (error) {
+      console.log(error)
+    }
+  };
 
   const getProducts = () => {
     client
@@ -19,11 +29,13 @@ export function ProfileShow() {
 
   useEffect(() => {
     getProducts();
+        oneUser();
   }, []);
 
   return (
     <div className="userInfo">
-      <div>
+    <h1>{user.firstName}</h1>     
+    {/*  <div>
         <div>
           <h2>
             {user.firstName} {user.lastName} - {user.money}€
@@ -60,7 +72,7 @@ export function ProfileShow() {
             }
           })}
         </div>
-      </div>
+      </div>  */}
     </div>
   );
 }
