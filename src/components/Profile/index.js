@@ -1,18 +1,19 @@
 import { useContext, useState, useEffect } from "react";
 import { client } from "client";
 import "./profile.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AddMoneyOption } from "components/AddMoney";
 import { AuthContext } from "context";
 
 export function ProfileShow() {
+  const {id} = useParams()
   const [userProfile, setUserProfile] = useState("null");
   const { user } = useContext(AuthContext);
   const [products, setProducts] = useState([]);
   const oneUser = async () => {
     try {
       const response = await client.get(
-        `/profile/${window.location.href.split("/").at(-1)}`
+        `/profile/${id}`
       );
       setUserProfile(response.data);
     } catch (error) {
@@ -30,13 +31,13 @@ export function ProfileShow() {
   useEffect(() => {
     oneUser();
     getProducts();
-  }, []);
+  }, [id]);
 
   return (
     <div>
       <h2>
-        {userProfile.firstName} {userProfile.lastName}{" "}
-        {user._id === userProfile._id ? user.money : null}{" "}
+        {userProfile.firstName} {userProfile.lastName}
+        {user._id === userProfile._id ? user.money : null}
       </h2>
       <img src={userProfile.image} alt={userProfile.image} />
       {user._id === userProfile._id ? <AddMoneyOption /> : null}
