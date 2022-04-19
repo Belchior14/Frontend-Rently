@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { client } from "client";
+import { Navigate, useNavigate } from "react-router-dom";
+import { AuthContext } from "context";
 
 export function AddProductsForm() {
   const [category, setCategory] = useState("Others");
@@ -9,7 +11,9 @@ export function AddProductsForm() {
   const [price, setPrice] = useState("");
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
-  
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
+
   const addProducts = async (
     category,
     name,
@@ -44,6 +48,8 @@ export function AddProductsForm() {
     setPrice("");
     setCity("");
     setCountry("");
+    console.log(user);
+    navigate(`/profile/${user._id}`);
   };
 
   return (
@@ -83,7 +89,7 @@ export function AddProductsForm() {
         onChange={(e) => {
           setImage(e.target.value);
         }}
-      />      
+      />
       <label>Price:</label>
       <input
         type="number"
@@ -94,6 +100,7 @@ export function AddProductsForm() {
         }}
       />
       <label>City:</label>
+      
       <input
         type="text"
         id="city"
@@ -112,6 +119,6 @@ export function AddProductsForm() {
         }}
       />
       <button type="onSubmit">Add Product</button>
-      </form>
+    </form>
   );
 }

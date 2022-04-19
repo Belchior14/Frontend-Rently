@@ -22,7 +22,7 @@ ReactDOM.render(
       <Route path="/product" element={<AllProducts/>} />
       <Route path="/product/:id" element={<SingleProduct/>} />
       <Route path="/product/add" element={<PrivateRoute><AddProducts /></PrivateRoute>} />
-      <Route path="profile/:id" element={<PrivateRoute><Profile/></PrivateRoute>} />
+      <Route path="profile/:id" element={<Profile/>} />
       <Route path="*" element={<NotFound/>} />
     </Routes>
     </AuthContextProvider>

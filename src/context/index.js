@@ -48,11 +48,23 @@ export function AuthContextProvider({ children }) {
     navigate("/");
   };
 
+  const getUser = async () => {
+    try{
+      const response = await client.get(`/profile/${user._id}`)
+      setUser(response.data)
+
+    }
+    catch (error) {
+      console.log(error)
+    }
+  } 
+
   const value = {
     user,
     signup,
     login,
     logout,
+    getUser
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

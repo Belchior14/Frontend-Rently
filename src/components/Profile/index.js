@@ -3,6 +3,7 @@ import { AuthContext } from "context";
 import { client } from "client";
 import "./profile.css";
 import { Link } from "react-router-dom";
+import { AddMoneyOption } from "components/AddMoney";
 
 export function ProfileShow() {
   const { user } = useContext(AuthContext);
@@ -23,10 +24,14 @@ export function ProfileShow() {
   return (
     <div className="userInfo">
       <div>
-        <h2>
-          {user.firstName} {user.lastName} - {user.money}€
-        </h2>
-        <h3>{user.username}</h3>
+        <div>
+          <h2>
+            {user.firstName} {user.lastName} - {user.money}€
+          </h2>
+          <h3>{user.username}</h3>
+          <AddMoneyOption />
+        </div>
+
         <img className="profileImg" src={user.image} alt={user.image} />
       </div>
 
