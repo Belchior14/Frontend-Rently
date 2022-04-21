@@ -11,6 +11,7 @@ export function ProfileShow() {
   const [userProfile, setUserProfile] = useState("");
   const { user } = useContext(AuthContext);
   const [products, setProducts] = useState([]);
+  const [edit, setEdit] = useState(false);
   const oneUser = async () => {
     try {
       const response = await client.get(`/profile/${id}`);
@@ -34,6 +35,10 @@ export function ProfileShow() {
       });
     });
   };
+
+  const handleEdit = () => {
+    setEdit(true);
+  }; 
 
   useEffect(() => {
     oneUser();
@@ -66,7 +71,7 @@ export function ProfileShow() {
                   />
                 </div>
                 <div className="product__actions">
-                <button>Edit</button>
+                <button onClick={handleEdit}>Edit</button>
                 <button onClick={handleDelete}>Delete</button>               
                 </div>
               </Link>
