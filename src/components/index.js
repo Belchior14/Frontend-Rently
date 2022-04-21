@@ -8,3 +8,4 @@ export { PrivateRoute } from "./PrivateRoute";
 export {SingleProductShow} from "./SingleProduct";
 export {AddMoneyOption} from "./AddMoney"
 export {RentProductButton} from "./RentProduct"
+export {EditProductForm} from "./EditProducts"

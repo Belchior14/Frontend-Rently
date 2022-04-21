@@ -4,9 +4,10 @@ import "./profile.css";
 import { Link, useParams } from "react-router-dom";
 import { AddMoneyOption } from "components/AddMoney";
 import { AuthContext } from "context";
-import userEvent from "@testing-library/user-event";
+import { useNavigate } from "react-router-dom";
 
 export function ProfileShow() {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [userProfile, setUserProfile] = useState("");
   const { user } = useContext(AuthContext);
@@ -24,7 +25,7 @@ export function ProfileShow() {
   const getProducts = () => {
     client
       .get("/product")
-      .then((response) => setProducts(response.data))
+      .then((response) => setProducts(response.data.product))
       .catch((error) => console.log(error));
   };
 
@@ -34,8 +35,10 @@ export function ProfileShow() {
     getProducts()
   };
 
-  const handleEdit = () => {
-    setEdit(true);
+  const handleEdit = (id) => {
+  
+    navigate(`/product/edit/${id}`)
+    
   };
 
   useEffect(() => {
@@ -70,7 +73,7 @@ export function ProfileShow() {
                 </div>
                 <div className="product__actions"></div>
               </Link>
-              <button onClick={handleEdit}>Edit</button>
+              <button onClick={() => handleEdit(product._id)}>Edit</button>
               <button onClick={() => handleDelete(product._id)}>Delete</button>
             </div>
           );

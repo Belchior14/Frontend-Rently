@@ -4,7 +4,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home, Login, Signup , NotFound, AddProducts, AllProducts, Profile, SingleProduct } from "pages";
-import { PrivateRoute } from "components";
+import { EditProductForm, PrivateRoute } from "components";
 
 import { AuthContextProvider } from "context";
 import { Navbar } from "components";
@@ -22,6 +22,7 @@ ReactDOM.render(
       <Route path="/product" element={<AllProducts/>} />
       <Route path="/product/:id" element={<SingleProduct/>} />
       <Route path="/product/add" element={<PrivateRoute><AddProducts /></PrivateRoute>} />
+      <Route path="/product/edit/:id" element={<PrivateRoute><EditProductForm /></PrivateRoute>} />
       <Route path="profile/:id" element={<Profile/>} />
       <Route path="*" element={<NotFound/>} />
     </Routes>
