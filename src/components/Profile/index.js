@@ -36,11 +36,11 @@ export function ProfileShow() {
   return (
     <div>
       <h2>
-        {userProfile.firstName} {userProfile.lastName}
-        {user._id === userProfile._id ? user.money : null}
+        {userProfile.firstName} {userProfile.lastName}    
+        {user._id === userProfile._id ? ` - ${user.money}€`: null}
       </h2>
       <img src={userProfile.image} alt={userProfile.image} />
-      {user._id === userProfile._id ? <AddMoneyOption /> : null}
+      {user._id === userProfile._id ? <AddMoneyOption />  : null}
       <h1>Products for rent</h1>
       {products.map((product) => {
         if (userProfile._id === product.user) {

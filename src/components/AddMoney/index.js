@@ -12,7 +12,6 @@ export function AddMoneyOption() {
       const response = await client.put(`/profile/${user._id}`);
       setMoney(response.data.money);
       getUser()
-      /* console.log(response.data); */
     } catch (error) {
       console.log(error);
     }
