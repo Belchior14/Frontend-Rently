@@ -12,7 +12,7 @@ export function ProfileShow() {
   const [userProfile, setUserProfile] = useState("");
   const { user } = useContext(AuthContext);
   const [products, setProducts] = useState([]);
-  const [edit, setEdit] = useState(false);
+  
   const oneUser = async () => {
     try {
       const response = await client.get(`/profile/${id}`);
