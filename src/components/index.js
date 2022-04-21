@@ -7,3 +7,4 @@ export {ProfileShow} from "./Profile"
 export { PrivateRoute } from "./PrivateRoute";
 export {SingleProductShow} from "./SingleProduct";
 export {AddMoneyOption} from "./AddMoney"
+export {RentProductButton} from "./RentProduct"

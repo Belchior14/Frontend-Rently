@@ -6,15 +6,13 @@ import { AddMoneyOption } from "components/AddMoney";
 import { AuthContext } from "context";
 
 export function ProfileShow() {
-  const {id} = useParams()
+  const { id } = useParams();
   const [userProfile, setUserProfile] = useState("null");
   const { user } = useContext(AuthContext);
   const [products, setProducts] = useState([]);
   const oneUser = async () => {
     try {
-      const response = await client.get(
-        `/profile/${id}`
-      );
+      const response = await client.get(`/profile/${id}`);
       setUserProfile(response.data);
     } catch (error) {
       console.log(error);
@@ -36,11 +34,11 @@ export function ProfileShow() {
   return (
     <div>
       <h2>
-        {userProfile.firstName} {userProfile.lastName}    
-        {user._id === userProfile._id ? ` - ${user.money}€`: null}
+        {userProfile.firstName} {userProfile.lastName}
+        {user._id === userProfile._id ? ` - ${user.money}€` : null}
       </h2>
       <img src={userProfile.image} alt={userProfile.image} />
-      {user._id === userProfile._id ? <AddMoneyOption />  : null}
+      {user._id === userProfile._id ? <AddMoneyOption /> : null}
       <h1>Products for rent</h1>
       {products.map((product) => {
         if (userProfile._id === product.user) {
@@ -63,6 +61,16 @@ export function ProfileShow() {
           );
         }
       })}
+      {user && (
+        <div>
+          <h1>Rented Products</h1>
+          {user.rentedProducts.forEach((productRented) => {
+            <h3>{productRented.name}</h3>;
+
+            console.log(productRented);
+          })}
+        </div>
+      )}
     </div>
   );
 }
