@@ -5,11 +5,15 @@ import { useNavigate, Link } from "react-router-dom";
 export function AllProductsShow() {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
+  
 
   const getProducts = () => {
     client
       .get("/product")
-      .then((response) => setProducts(response.data))
+      .then((response) => {
+        /* console.log(response.data.message) */
+        setProducts(response.data.product)
+      })
       .catch((error) => console.log(error));
   };
 
