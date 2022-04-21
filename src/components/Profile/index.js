@@ -4,10 +4,11 @@ import "./profile.css";
 import { Link, useParams } from "react-router-dom";
 import { AddMoneyOption } from "components/AddMoney";
 import { AuthContext } from "context";
+import userEvent from "@testing-library/user-event";
 
 export function ProfileShow() {
   const { id } = useParams();
-  const [userProfile, setUserProfile] = useState("null");
+  const [userProfile, setUserProfile] = useState("");
   const { user } = useContext(AuthContext);
   const [products, setProducts] = useState([]);
   const oneUser = async () => {
@@ -61,16 +62,14 @@ export function ProfileShow() {
           );
         }
       })}
-      {user && (
+      {user._id === userProfile._id ? (
         <div>
           <h1>Rented Products</h1>
-          {user.rentedProducts.forEach((productRented) => {
-            <h3>{productRented.name}</h3>;
-
-            console.log(productRented);
+          {userProfile.rentedProducts.map((productRented) => {
+            return <h3>{productRented.name}</h3>;
           })}
         </div>
-      )}
+      ) : null}
     </div>
   );
 }
