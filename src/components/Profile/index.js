@@ -27,6 +27,14 @@ export function ProfileShow() {
       .catch((error) => console.log(error));
   };
 
+  const handleDelete = () => {
+    setProducts((productsForRent) => {
+      return productsForRent.filter((product) => {
+        return product.id !== id;
+      });
+    });
+  };
+
   useEffect(() => {
     oneUser();
     getProducts();
@@ -57,6 +65,10 @@ export function ProfileShow() {
                     alt={product.image}
                   />
                 </div>
+                <div className="product__actions">
+                <button>Edit</button>
+                <button onClick={handleDelete}>Delete</button>               
+                </div>
               </Link>
             </div>
           );
@@ -73,3 +85,4 @@ export function ProfileShow() {
     </div>
   );
 }
+
