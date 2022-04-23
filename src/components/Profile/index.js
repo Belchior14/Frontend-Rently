@@ -11,8 +11,7 @@ export function ProfileShow() {
   const { id } = useParams();
   const [userProfile, setUserProfile] = useState("");
   const { user } = useContext(AuthContext);
-  const [products, setProducts] = useState([]);
-  
+
   const oneUser = async () => {
     try {
       const response = await client.get(`/profile/${id}`);
@@ -22,27 +21,17 @@ export function ProfileShow() {
     }
   };
 
-  const getProducts = () => {
-    client
-      .get("/product")
-      .then((response) => setProducts(response.data.product))
-      .catch((error) => console.log(error));
-  };
-
   const handleDelete = async (id) => {
-    
-    await client.delete(`/product/${id}`)
-    getProducts()
+    await client.delete(`/product/${id}`);
+    oneUser();
   };
 
   const handleEdit = (id) => {
-    navigate(`/product/edit/${id}`)
-    
+    navigate(`/product/edit/${id}`);
   };
 
   useEffect(() => {
     oneUser();
-    getProducts();
   }, [id]);
 
   return (
@@ -54,29 +43,24 @@ export function ProfileShow() {
       <img src={userProfile.image} alt={userProfile.image} />
       {user._id === userProfile._id ? <AddMoneyOption /> : null}
       <h1>Products for rent</h1>
-      {products.map((product) => {
-        if (userProfile._id === product.user) {
-          return (
-            <div className="profileProduct">
-              <Link
-                className="profileProductName"
-                to={`/product/${product._id}`}
-              >
-                <div>
-                  <h3>{product.name}</h3>
-                  <img
-                    className="productImg"
-                    src={product.image}
-                    alt={product.image}
-                  />
-                </div>
-                <div className="product__actions"></div>
-              </Link>
-              <button onClick={() => handleEdit(product._id)}>Edit</button>
-              <button onClick={() => handleDelete(product._id)}>Delete</button>
-            </div>
-          );
-        }
+      {userProfile.products?.map((product) => {
+        return (
+          <div className="profileProduct">
+            <Link className="profileProductName" to={`/product/${product._id}`}>
+              <div>
+                <h3>{product.name}</h3>
+                <img
+                  className="productImg"
+                  src={product.image}
+                  alt={product.image}
+                />
+              </div>
+              <div className="product__actions"></div>
+            </Link>
+            <button onClick={() => handleEdit(product._id)}>Edit</button>
+            <button onClick={() => handleDelete(product._id)}>Delete</button>
+          </div>
+        );
       })}
       {user._id === userProfile._id ? (
         <div>
