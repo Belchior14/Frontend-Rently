@@ -34,6 +34,7 @@ export function SingleProductShow() {
           </Link>
           <h3>{product.name}</h3>
           <h3>{product.price}</h3>
+          <h3>{product.city}</h3>
           {product.rented === false && product.user !== user._id && (
             <RentProductButton />
           )}
