@@ -1,13 +1,14 @@
 import { client } from "client";
 import { useState ,useEffect } from "react";
 
-
-
 export function EditProductForm() {
-
-
-    const [product ,setProduct] = useState()
-
+    const [product, setProduct] = useState()
+    const [newName, setNewName] = useState()
+    const [newDescription, setNewDescription] = useState()
+    const [newImage, setNewImage] = useState()
+    const [newPrice, setNewPrice] = useState()
+    const [newCity, setNewCity] = useState()
+    const [newCountry, setNewCountry] = useState()
 
     const oneProduct = async () => {
         try {
@@ -23,8 +24,17 @@ export function EditProductForm() {
         oneProduct();
       }, []);
 
+      const changeProductContent = () => {
+        product &&
+        setNewName(product.name)
+      };
+      useEffect(() => {
+        changeProductContent();
+      }, [product])
+
   return (
     <div>
+      {product && 
       <form>
           {console.log(product)}
         <label>Category:</label>
@@ -37,20 +47,21 @@ export function EditProductForm() {
         </select>
 
         <label>Product Name:</label>
-        <input type="text" id="name" value="test" />
+        <input type="text" id="name" value={newName} onChange={(event) => setNewName(event.target.value)}/>
         <label>Description:</label>
-        <input type="text" id="description"  />
+        <input type="text" id="description" value={newDescription} onChange={(event) => setNewDescription(event.target.value)} />
         <label>Image:</label>
-        <input type="text" id="image" />
+        <input type="text" id="image" value={newImage} onChange={(event) => setNewImage(event.target.value)}/>
         <label>Price:</label>
-        <input type="number" id="price" />
+        <input type="number" id="price" value={newPrice} onChange={(event) => setNewPrice(event.target.value)}/>
         <label>City:</label>
 
-        <input type="text" id="city" />
+        <input type="text" id="city" value={newCity} onChange={(event) => setNewCity(event.target.value)}/>
         <label>Country:</label>
-        <input type="text" id="country" />
-        <button type="onSubmit">Edit Product</button>
+        <input type="text" id="country" value={newCountry} onChange={(event) => setNewCountry(event.target.value)}/>
+        <button type="submit">Edit Product</button>
       </form>
-    </div>
+   }
+    </div> 
   );
 }

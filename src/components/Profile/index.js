@@ -36,7 +36,6 @@ export function ProfileShow() {
   };
 
   const handleEdit = (id) => {
-  
     navigate(`/product/edit/${id}`)
     
   };
