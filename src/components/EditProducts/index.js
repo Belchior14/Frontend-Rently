@@ -7,7 +7,7 @@ export function EditProductForm() {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const [product, setProduct] = useState();
-  const [newCategory , setNewCategory] = useState()
+  const [newCategory, setNewCategory] = useState();
   const [newName, setNewName] = useState();
   const [newDescription, setNewDescription] = useState();
   const [newImage, setNewImage] = useState();
@@ -25,32 +25,30 @@ export function EditProductForm() {
       console.log(error);
     }
   };
- 
+
   const saveProduct = async () => {
-
-    try{
-
-      const response = await client.put(`product/edit/${window.location.href.split("/").at(-1)}`,
-      {
-        category: newCategory,
-        name: newName,
-        description: newDescription,
-        image: newImage,
-        price: newPrice,
-        city: newCity,
-        country: newCountry
-      })
-
+    try {
+      const response = await client.put(
+        `product/edit/${window.location.href.split("/").at(-1)}`,
+        {
+          category: newCategory,
+          name: newName,
+          description: newDescription,
+          image: newImage,
+          price: newPrice,
+          city: newCity,
+          country: newCountry,
+        }
+      );
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
-
+  };
 
   const handleSave = async (e) => {
     e.preventDefault();
-    saveProduct()
-    navigate(`/profile/${user._id}`)
+    saveProduct();
+    navigate(`/profile/${user._id}`);
   };
 
   useEffect(() => {
@@ -58,21 +56,13 @@ export function EditProductForm() {
   }, []);
 
   const changeProductContent = () => {
-    product && 
-    setNewCategory(product.category)
-    product && 
-    setNewName(product.name)
-    product && 
-    setNewPrice(product.price)
-    product && 
-    setNewDescription(product.description)
-    product && 
-    setNewImage(product.image)
-    product && 
-    setNewCity(product.city)
-    product && 
-    setNewCountry(product.country)
-   
+    product && setNewCategory(product.category);
+    product && setNewName(product.name);
+    product && setNewPrice(product.price);
+    product && setNewDescription(product.description);
+    product && setNewImage(product.image);
+    product && setNewCity(product.city);
+    product && setNewCountry(product.country);
   };
   useEffect(() => {
     changeProductContent();
@@ -83,14 +73,16 @@ export function EditProductForm() {
       {product && (
         <form onSubmit={handleSave}>
           <label>Category:</label>
-          <select value={newCategory} onChange={(e) => setNewCategory(e.target.value)}>
+          <select
+            value={newCategory}
+            onChange={(e) => setNewCategory(e.target.value)}
+          >
             <option value="Technology">Technology</option>
             <option value="Sports">Sports</option>
             <option option="Home">Home</option>
             <option option="Leisure">Leisure</option>
             <option option="Others">Others</option>
           </select>
-
           <label>Product Name:</label>
           <input
             type="text"
@@ -120,7 +112,6 @@ export function EditProductForm() {
             onChange={(event) => setNewPrice(event.target.value)}
           />
           <label>City:</label>
-
           <input
             type="text"
             id="city"
