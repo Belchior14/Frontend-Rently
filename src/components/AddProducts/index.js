@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { client } from "client";
 import { Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "context";
+import { FileUpload } from "components/FileUpload";
 
 export function AddProductsForm() {
   const [category, setCategory] = useState("Others");
@@ -82,14 +83,7 @@ export function AddProductsForm() {
         }}
       />
       <label>Image:</label>
-      <input
-        type="text"
-        id="image"
-        value={image}
-        onChange={(e) => {
-          setImage(e.target.value);
-        }}
-      />
+      <FileUpload setImage={setImage}/>
       <label>Price:</label>
       <input
         type="number"

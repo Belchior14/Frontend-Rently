@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-export function FileUpload({setFile}) {
-  const uploadImage = async (file) => {
-    return await axios.post(`${process.env.REACT_APP_BACKEND_URL}/upload`, file)
+export function FileUpload({setImage}) {
+  const uploadImage = async (image) => {
+    return await axios.post(`${process.env.REACT_APP_BACKEND_URL}/upload`, image)
       .then(res => res.data)
       .catch((err) => console.log(err))
   }
@@ -12,7 +12,7 @@ export function FileUpload({setFile}) {
     file.append("myFile", e.target.files[0])
     
     uploadImage(file)
-      .then(response => setFile(response.path))
+      .then(response => setImage(response.path))
       .catch(err => console.log("Error while uploading the file: ", err))
   }
 
