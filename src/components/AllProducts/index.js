@@ -1,4 +1,5 @@
 import { client } from "client";
+import { SearchBarFunction } from "components/SearchBar";
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
@@ -23,6 +24,7 @@ export function AllProductsShow() {
 
   return (
     <div className="theProducts">
+      <SearchBarFunction/>
       <h1>Products</h1>
       <div className="allProfileProducts">
         {products.map((product) => {
