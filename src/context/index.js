@@ -18,14 +18,19 @@ export function AuthContextProvider({ children }) {
 
   //function to do the signup
   const signup = async (email, password, firstName, lastName, username) => {
-    const response = await client.post("/auth/signup", {
-      email,
-      password,
-      firstName,
-      lastName,
-      username,
-    });
-    navigate("/login");
+    try{
+      const response = await client.post("/auth/signup", {
+        email,
+        password,
+        firstName,
+        lastName,
+        username,
+      });
+      navigate("/login");
+    } catch(error) {
+      console.log(error)
+    }
+
   };
   //function to do the login
   const login = async (email, password) => {

@@ -1,5 +1,5 @@
 import { AuthContext } from "context";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { client } from "client";
 
 export function AddMoneyOption() {

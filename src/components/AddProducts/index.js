@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { client } from "client";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "context";
 import { FileUpload } from "components/FileUpload";
 

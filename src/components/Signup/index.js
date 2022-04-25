@@ -14,7 +14,7 @@ export function SignupForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     signup(email, password, firstName, lastName, username);
-  };
+      };
 
   return (
     <div className="signupDiv">
@@ -51,6 +51,7 @@ export function SignupForm() {
           <input
             type="email"
             id="email"
+            placeholder="example@example.com"
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
@@ -60,12 +61,13 @@ export function SignupForm() {
           <input
             type="password"
             id="password"
+            placeholder="6 characters and contain at least one number, one lowercase and one uppercase letter"
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
             }}
           />
-          <button type="onSubmit">Signup</button>
+          <button disabled={!(email && password && firstName && lastName && username)}>Signup</button>
         </form>
         <p>
           Already have an account? <Link to="/login">Click here</Link>
