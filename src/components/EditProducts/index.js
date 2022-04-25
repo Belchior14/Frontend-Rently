@@ -2,6 +2,8 @@ import { client } from "client";
 import { AuthContext } from "context";
 import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { FileUpload } from "components/FileUpload";
+import "./editProduct.css"
 
 export function EditProductForm() {
   const navigate = useNavigate();
@@ -72,6 +74,7 @@ export function EditProductForm() {
     <div>
       {product && (
         <form onSubmit={handleSave}>
+          <div className="editProductForm">
           <label>Category:</label>
           <select
             value={newCategory}
@@ -91,12 +94,10 @@ export function EditProductForm() {
             onChange={(event) => setNewName(event.target.value)}
           />
           <label>Description:</label>
-          <input
-            type="text"
+          <textarea          type="text"
             id="description"
             value={newDescription}
-            onChange={(event) => setNewDescription(event.target.value)}
-          />
+            onChange={(event) => setNewDescription(event.target.value)}/>
           <label>Image:</label>
           <input
             type="text"
@@ -126,6 +127,8 @@ export function EditProductForm() {
             onChange={(event) => setNewCountry(event.target.value)}
           />
           <button type="submit">Edit Product</button>
+          </div>
+          
         </form>
       )}
     </div>
