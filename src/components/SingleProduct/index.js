@@ -3,6 +3,7 @@ import { client } from "client";
 import { Link } from "react-router-dom";
 import { RentProductButton } from "components/RentProduct";
 import { AuthContext } from "context";
+import { UnrentProductButton } from "components/UnrentProduct";
 
 export function SingleProductShow() {
   const { user } = useContext(AuthContext);
@@ -37,6 +38,9 @@ export function SingleProductShow() {
           <h3>{product.city}</h3>
           {product.rented === false && product.user !== user._id && (
             <RentProductButton />
+          )}
+          {product.rented === true && user.rentedProducts.includes(product._id) && (
+            <UnrentProductButton />
           )}
         </div>
       ) : null}
