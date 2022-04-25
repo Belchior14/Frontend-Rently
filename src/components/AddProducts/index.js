@@ -3,6 +3,7 @@ import { client } from "client";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "context";
 import { FileUpload } from "components/FileUpload";
+import "./addProducts.css";
 
 export function AddProductsForm() {
   const [category, setCategory] = useState("Others");
@@ -55,64 +56,67 @@ export function AddProductsForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>Category:</label>
-      <select value={category} onChange={(e) => setCategory(e.target.value)}>
-        <option value="Technology">Technology</option>
-        <option value="Sports">Sports</option>
-        <option option="Home">Home</option>
-        <option option="Leisure">Leisure</option>
-        <option option="Others">Others</option>
-      </select>
+      <div className="addProductForm">
+        <label>Category:</label>
+        <select value={category} onChange={(e) => setCategory(e.target.value)}>
+          <option value="Technology">Technology</option>
+          <option value="Sports">Sports</option>
+          <option option="Home">Home</option>
+          <option option="Leisure">Leisure</option>
+          <option option="Others">Others</option>
+        </select>
 
-      <label>Product Name:</label>
-      <input
-        type="text"
-        id="name"
-        value={name}
-        onChange={(e) => {
-          setName(e.target.value);
-        }}
-      />
-      <label>Description:</label>
-      <input
-        type="text"
-        id="description"
-        value={description}
-        onChange={(e) => {
-          setDescription(e.target.value);
-        }}
-      />
-      <label>Image:</label>
-      <FileUpload setImage={setImage}/>
-      <label>Price:</label>
-      <input
-        type="number"
-        id="price"
-        value={price}
-        onChange={(e) => {
-          setPrice(e.target.value);
-        }}
-      />
-      <label>City:</label>
-      
-      <input
-        type="text"
-        id="city"
-        value={city}
-        onChange={(e) => {
-          setCity(e.target.value);
-        }}
-      />
-      <label>Country:</label>
-      <input
-        type="text"
-        id="country"
-        value={country}
-        onChange={(e) => {
-          setCountry(e.target.value);
-        }}
-      />
-      <button type="onSubmit">Add Product</button>
+        <label>Product Name:</label>
+        <input
+          type="text"
+          id="name"
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+        />
+        <label>Description:</label>
+        <textarea
+          type="text"
+          id="description"
+          value={description}
+          onChange={(e) => {
+            setDescription(e.target.value);
+          }}
+        />
+
+        <label>Image:</label>
+        <FileUpload setImage={setImage} />
+        <label>Price:</label>
+        <input
+          type="number"
+          id="price"
+          value={price}
+          onChange={(e) => {
+            setPrice(e.target.value);
+          }}
+        />
+        <label>City:</label>
+
+        <input
+          type="text"
+          id="city"
+          value={city}
+          onChange={(e) => {
+            setCity(e.target.value);
+          }}
+        />
+        <label>Country:</label>
+        <input
+          type="text"
+          id="country"
+          value={country}
+          onChange={(e) => {
+            setCountry(e.target.value);
+          }}
+        />
+        <button disabled={!(category && name && description && image && price && city && country)}>Add Product</button>
+      </div>
     </form>
   );
 }

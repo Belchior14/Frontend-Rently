@@ -11,6 +11,7 @@ export function ProfileShow() {
   const { id } = useParams();
   const [userProfile, setUserProfile] = useState("");
   const { user } = useContext(AuthContext);
+  const [products, setProducts] = useState([])
 
   const oneUser = async () => {
     try {
@@ -21,6 +22,19 @@ export function ProfileShow() {
     }
   };
 
+  const getProducts = async () => {
+    try{
+
+      const response = await client.get("/products")
+      setProducts(response.data.product)
+
+    } catch(error) {
+      console.log(error)
+    }
+
+
+  }
+ 
   const handleDelete = async (id) => {
     await client.delete(`/product/${id}`);
     oneUser();
@@ -32,7 +46,8 @@ export function ProfileShow() {
 
   useEffect(() => {
     oneUser();
-  }, [id]);
+    getProducts()
+  }, [{id,products}]);
 
   return (
     <div>

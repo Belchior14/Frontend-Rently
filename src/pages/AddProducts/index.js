@@ -1,10 +1,10 @@
 import { AddProductsForm } from "components";
-import { Navbar } from "components";
+import "./addProductsPage.css"
 
 export function AddProducts() {
 return (
 <div>
-<h2>Add a new product</h2>
+<h2 className="addProductPageTitle">Add a new product</h2>
   <AddProductsForm/>
 </div>
 )

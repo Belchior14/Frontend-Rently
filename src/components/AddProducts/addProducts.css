@@ -1,0 +1,6 @@
+.addProductForm {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-left: 50px;
+}
