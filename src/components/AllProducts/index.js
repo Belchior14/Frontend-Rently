@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 
 export function AllProductsShow() {
   const { search } = window.location;
-  const query = new URLSearchParams(search).get("s");
-  const [searchQuery, setSearchQuery] = useState(query || "");
+/*   const query = new URLSearchParams(search).get("s");
+ */  const [searchQuery, setSearchQuery] = useState("");
+ const [searchCity, setSearchCity] = useState("")
   const [products, setProducts] = useState([]);
 
   const getProducts = () => {
@@ -18,28 +19,44 @@ export function AllProductsShow() {
       .catch((error) => console.log(error));
   };
 
-  useEffect(() => {
-    getProducts();
+  useEffect(async () => {
+    await getProducts();
+    filterProducts()
   }, []);
 
-  const filterProducts = (products, query) => {
-    if (!query) {
+  useEffect(() => {
+    filterProducts();
+  }, [searchQuery, searchCity])
+
+  const filterProducts = () => {
+   /*  if (!query) {
       return products;
-    }
+    } */
+  const productFilters = products;
 
-    return products.filter((product) => {
-      const prodName = product.name;
-      return prodName.includes(query);
+    if (searchQuery) productFilters = productFilters.filter((product) => product.name.includes(searchQuery))
+    if (searchCity) productFilters = productFilters.filter((product) => product.city.includes(searchCity))
+    return productFilters;
+  }; 
+
+/*   const filteredProducts = filterProducts(products, searchQuery);
+ */ /*  const filteredCities = (filteredProducts, query) => {
+    if (!query) {
+      return filteredProducts;
+    } 
+    return filteredProducts.filter((product) => {
+      const prodCity = product.city;
+      return prodCity.includes(query);
     });
-  };
+  } */
 
-  const filteredProducts = filterProducts(products, searchQuery);
-
+/*   const filteredCitiesProducts = filteredCities(filteredProducts, searchQuery)
+ */
   return (
     <div className="theProducts">
       <form action="/" method="get">
         <label htmlFor="header-search">
-          <span className="visually-hidden">Search products</span>
+          <span className="visually-hidden">Search Products</span>
         </label>
         <input
           value={searchQuery}
@@ -51,9 +68,24 @@ export function AllProductsShow() {
         />
       </form>
 
+      <form action="/" method="get">
+        <label htmlFor="header-search">
+          <span className="visually-hidden">Search Cities</span>
+        </label>
+        <input
+          value={searchCity}
+          onInput={(e) => setSearchCity(e.target.value)}
+          type="text"
+          id="header-search"
+          placeholder="Search cities"
+          name="s"
+        />
+      </form>
+
+
       <h1>Products</h1>
-      <div className="allProfileProducts">
-        {filteredProducts.map((product) => {
+     {<div className="allProfileProducts">
+        {filterProducts.map((product) => {
           return (
             <div className="profileProduct">
               <Link
@@ -72,7 +104,7 @@ export function AllProductsShow() {
             </div>
           );
         })}
-      </div>
+      </div> }
     </div>
   );
 }
