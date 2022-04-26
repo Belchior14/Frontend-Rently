@@ -9,6 +9,9 @@ export function SingleProductShow() {
   const { user } = useContext(AuthContext);
   const [product, setProduct] = useState(null);
   const [userOfTheProduct, setUserOfTheProduct] = useState("");
+  const [rentedProduct, setRentedProduct] = useState(false)
+
+
 
   const oneProduct = async () => {
     try {
@@ -29,12 +32,14 @@ export function SingleProductShow() {
   return (
     <div>
       {product ? (
-        <div>
+
+        !rentedProduct ? (        <div>
           <Link to={`/profile/${userOfTheProduct._id}`}>
             <h1>{userOfTheProduct.firstName}</h1>
           </Link>
           <h3>{product.name}</h3>
           <h3>{product.price}</h3>
+          
           <h3>{product.city}</h3>
           {product.rented === false && product.user !== user._id && (
             <RentProductButton />
@@ -42,8 +47,17 @@ export function SingleProductShow() {
           {product.rented === true && user.rentedProducts.includes(product._id) && (
             <UnrentProductButton />
           )}
-        </div>
+          <button onClick={() => setRentedProduct(true)}>display</button>
+        </div>) : 
+        <div>
+          <p>Congrats! You rentered {product.name} from {userOfTheProduct.firstName}</p>
+
+       </div>
+
+        
+
       ) : null}
+     
     </div>
   );
 }
