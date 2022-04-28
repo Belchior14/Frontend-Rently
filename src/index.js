@@ -25,8 +25,8 @@ ReactDOM.render(
       <Route path="/product/edit/:id" element={<PrivateRoute><EditProductForm /></PrivateRoute>} />
       <Route path="profile/:id" element={<Profile/>} />
       <Route path="/checkout" element={<CheckOutForm/>}/>
-      <Route path="/success" element={<PrivateRoute><SuccessPage/></PrivateRoute> }/>
-      <Route path="/cancel" element={<PrivateRoute><CancelPage/></PrivateRoute> }/>
+      <Route path="/success" element={<SuccessPage/> }/>
+      <Route path="/cancel" element={<CancelPage/> }/>
       <Route path="*" element={<NotFound/>} />
     </Routes>
     </AuthContextProvider>
