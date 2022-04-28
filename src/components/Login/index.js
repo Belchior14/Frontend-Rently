@@ -1,5 +1,6 @@
 import { AuthContext } from "context";
 import { useContext, useState } from "react";
+import "./Login.css"
 
 export function LoginForm() {
   const { login } = useContext(AuthContext);

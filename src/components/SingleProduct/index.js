@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { RentProductButton } from "components/RentProduct";
 import { AuthContext } from "context";
 import { UnrentProductButton } from "components/UnrentProduct";
+import "./SingleProduct.css"
 
 export function SingleProductShow() {
   const { user } = useContext(AuthContext);

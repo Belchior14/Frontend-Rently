@@ -1,4 +1,5 @@
-import { AllProductsShow } from "components"
+import { AllProductsShow } from "components";
+import "./AllProducts.css"
 
 export function AllProducts() {
     return (

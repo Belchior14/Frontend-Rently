@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
+import "./CheckOutForm25.css"
 
 let stripePromise;
 

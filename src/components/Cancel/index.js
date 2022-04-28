@@ -1,3 +1,5 @@
+import "./Cancel.css"
+
 export function Cancel () {
     return (
         <div>

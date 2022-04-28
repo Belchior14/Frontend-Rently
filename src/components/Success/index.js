@@ -1,3 +1,5 @@
+import "./Success.css"
+
 export function Success () {
     return (
         <div>

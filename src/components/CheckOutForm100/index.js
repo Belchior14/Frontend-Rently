@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
+import "./CheckOutForm100.css"
 
 /* import CardIcon from "../images/credit-card.svg";
 import ProductImage from "../images/product-image.jpg"; */
