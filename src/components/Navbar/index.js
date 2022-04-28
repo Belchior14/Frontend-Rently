@@ -8,38 +8,36 @@ export function Navbar() {
   return (
     <div className="mainNavbar">
       <Link className="navLink" to="/">
-        <button className="navbarBtns">Home</button>
+        <a className="navbarLinks">Home</a>
       </Link>
-      <div className="navbarRoutes">
         <Link className="navLink" to="/product">
-          <button className="navbarBtns">Products</button>
+          <a className="navbarLinks">Products</a>
         </Link>
         {user && (
           <Link className="navLink" to="/product/add">
-            <button className="navbarBtns">Add Products</button>
+            <a className="navbarLinks">Add Products</a>
           </Link>
         )}
         {user && (
           <Link className="navLink" to={`/profile/${user._id}`}>
-            <button className="navbarBtns">Profile</button>
+            <a className="navbarLinks">Profile</a>
           </Link>
         )}
         {!user && (
           <Link className="navLink" to="/signup">
-            <button className="navbarBtns">Signup</button>
+            <a className="navbarLinks">Signup</a>
           </Link>
         )}
         {!user && (
           <Link className="navLink" to="/login">
-            <button className="navbarBtns">Login</button>
+            <a className="navbarLinks">Login</a>
           </Link>
         )}
         {user && (
-          <button className="navbarBtns" onClick={logout}>
+          <a className="navbarLinks" onClick={logout}>
             Logout
-          </button>
+          </a>
         )}
       </div>
-    </div>
   );
 }
