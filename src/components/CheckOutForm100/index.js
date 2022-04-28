@@ -5,8 +5,6 @@ import "./CheckOutForm100.css"
 /* import CardIcon from "../images/credit-card.svg";
 import ProductImage from "../images/product-image.jpg"; */
 
-/* import "../styles.css"; */
-
 let stripePromise;
 
 const getStripe = () => {

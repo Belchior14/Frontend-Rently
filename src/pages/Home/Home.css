@@ -1,0 +1,31 @@
+.h1Home{
+    padding: 40px;
+}
+
+.Btn {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 19px;
+    font-weight: 100;
+    padding: 16px;
+    background-color: #03CBD6;
+    -webkit-box-shadow: 1px 1px 5px 0 #000000;
+    -moz-box-shadow: 1px 1px 5px 0 #000000;
+    box-shadow: 1px 1px 5px 0 #000000;
+    text-shadow: 1px 1px 9px #000000;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+ }
+ 
+ .Btn:hover {
+    background: #1E8ED0;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-decoration: none;
+ }

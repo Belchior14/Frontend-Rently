@@ -10,6 +10,7 @@
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
+  cursor: pointer;
 }
 
 .navLink:hover {

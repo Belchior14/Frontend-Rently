@@ -34,7 +34,7 @@ export function Navbar() {
           </Link>
         )}
         {user && (
-          <a className="navbarLinks" onClick={logout}>
+          <a className="navLink" onClick={logout}>
             Logout
           </a>
         )}
