@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { client } from "client";
 import { useNavigate } from "react-router-dom";
 
@@ -63,6 +63,19 @@ export function AuthContextProvider({ children }) {
       console.log(error)
     }
   } 
+
+  const verify = async () => {
+    try {
+      const response = await client.get("/auth/verify");
+      setUser(response.data.user);
+    } catch (error) {
+      navigate("/");
+    }
+  };
+
+  useEffect(() => {
+    verify();
+  }, []);
 
   const value = {
     user,
