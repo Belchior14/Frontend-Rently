@@ -1,10 +1,12 @@
+import Checkout from "components/CheckOutForm";
+
 
 
 export function CheckOutForm () {
 
     return (
         <div>
-            Test
+           <Checkout/>
         </div>
     )
 }

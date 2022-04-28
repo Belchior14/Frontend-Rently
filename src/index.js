@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Login, Signup , NotFound, AddProducts, AllProducts, Profile, SingleProduct,CheckOutForm } from "pages";
+import { Home, Login, Signup , NotFound, AddProducts, AllProducts, Profile, SingleProduct,CheckOutForm, SuccessPage, CancelPage } from "pages";
 import { EditProductForm, PrivateRoute } from "components";
 import { AuthContextProvider } from "context";
 import { Navbar } from "components";
@@ -25,6 +25,8 @@ ReactDOM.render(
       <Route path="/product/edit/:id" element={<PrivateRoute><EditProductForm /></PrivateRoute>} />
       <Route path="profile/:id" element={<Profile/>} />
       <Route path="/checkout" element={<CheckOutForm/>}/>
+      <Route path="/success" element={<PrivateRoute><SuccessPage/></PrivateRoute> }/>
+      <Route path="/cancel" element={<PrivateRoute><CancelPage/></PrivateRoute> }/>
       <Route path="*" element={<NotFound/>} />
     </Routes>
     </AuthContextProvider>
