@@ -1,5 +1,3 @@
-
-
 export {Navbar} from "./Navbar"
 export {SignupForm} from "./Signup"
 export {LoginForm} from "./Login"
@@ -15,6 +13,8 @@ export {FileUpload} from "./FileUpload"
 export {UnrentProductButton} from "./UnrentProduct"
 export {Success} from "./Success"
 export {Cancel} from "./Cancel"
+export {AddCommentsForm} from "./AddComments"
+
 
 
 

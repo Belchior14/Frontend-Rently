@@ -50,7 +50,6 @@ export function AddProductsForm() {
     setPrice("");
     setCity("");
     setCountry("");
-    console.log(user);
     navigate(`/profile/${user._id}`);
   };
 
