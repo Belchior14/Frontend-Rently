@@ -18,7 +18,7 @@ export function SignupForm() {
       <div>
         <h2>Create an Account</h2>
         <form className="signupForm" onSubmit={handleSubmit}>
-          <label className="signupInput"></label>
+          <label className="firstName"></label>
           <input
             type="text"
             id="firstName"
@@ -28,7 +28,7 @@ export function SignupForm() {
               setFirstName(e.target.value);
             }}
           />
-          <label></label>
+          <label className="lastName"></label>
           <input
             type="text"
             id="lastName"
@@ -38,7 +38,7 @@ export function SignupForm() {
               setLastName(e.target.value);
             }}
           />
-          <label></label>
+          <label className="Username"></label>
           <input
             type="text"
             id="username"
@@ -48,7 +48,7 @@ export function SignupForm() {
               setUsername(e.target.value);
             }}
           />
-          <label></label>
+          <label className="email"></label>
           <input
             type="email"
             id="email"
@@ -58,7 +58,7 @@ export function SignupForm() {
               setEmail(e.target.value);
             }}
           />
-          <label></label>
+          <label className="password"></label>
           <input
             type="password"
             id="password"
@@ -70,7 +70,7 @@ export function SignupForm() {
           />
           <button disabled={!(email && password && firstName && lastName && username)}>Signup</button>
         </form>
-        <p>
+        <p className="loginLink">
           Already have an account? <Link to="/login">Click here</Link>
         </p>
       </div>

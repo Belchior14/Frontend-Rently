@@ -1,4 +1,5 @@
 .signupDiv{
+  display: flex;
   width: 40%;
   padding: 15px;
   margin: 100px 390px;
@@ -6,23 +7,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 1px 2px 2px rgb(0, 204, 255);
+  box-shadow: 1px 2px 2px #03cbd6ff;
   border: 0.1em solid rgba(20, 94, 143, 0.521);
   border-radius: 0.5em;
   text-align: center;
 }
 .signupForm {
-/* display: flex;
+display: flex;
 flex-direction: column;
-width: 50vh; */
 right: 0;
-width: 65%;
 height: 100%;
 opacity: 1;
 font-weight: bold;
-color: #035E7B;
+color: #03cbd6ff;
 transition: 2s;
+gap: 7px;
 }
 .signupInput{
 align-items: center;
+}
+
+.firstName{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lastName{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
