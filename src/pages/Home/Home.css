@@ -1,8 +1,27 @@
-.h1Home{
+.heroSection{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+
+.mainQuote{
     padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h1Home{
+    text-align: center;
+}
+
+.heroPicture{
+    width: 650px;
 }
 
 .Btn {
+    display: flex;
+    flex-direction: column;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
@@ -10,7 +29,7 @@
     font-family: Arial;
     font-size: 19px;
     font-weight: 100;
-    padding: 16px;
+    padding: 10px;
     background-color: #03CBD6;
     -webkit-box-shadow: 1px 1px 5px 0 #000000;
     -moz-box-shadow: 1px 1px 5px 0 #000000;
