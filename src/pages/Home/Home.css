@@ -59,9 +59,18 @@
     flex-direction: column;
     background-color: rgb(10, 193, 202);
     padding: 70px;
+    column-count: 5;
   }
 
   .h2title{
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    font-size: 60px;
+    color:white;
+  }
+
+  .h2titleRenting{
     text-align: center;
     margin: 10px;
     padding: 10px;
@@ -70,7 +79,8 @@
 
   .categoriesExamples{
       display: flex;
-      justify-content: space-evenly;   
+      justify-content: space-evenly;
+      margin: 80px;   
   }
 
   .eachCategory{
@@ -78,6 +88,14 @@
       flex-direction: column;
       align-items: center;
       gap: 10px;
+      border: 20px;
+      border-radius: 20px;
+      background-color: white;
+  }
+
+  .categoryPics{
+      opacity: 1;
+      transition: opacity 1s ease 0s;
   }
 
   .thirdSection{

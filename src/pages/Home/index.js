@@ -38,30 +38,30 @@ export function Home() {
           <div className="categoriesExamples">
             <div className="eachCategory">
               <h3>Sports</h3>
-              <img className="categoryPics" src={futebolImage} alt="futebol" />
+              <img src={futebolImage} alt="futebol" width={200}/>
             </div>
             <div className="eachCategory">
               <h3>Technology</h3>
-              <img className="categoryPics" src={technology} alt="Technology" />
+              <img src={technology} alt="Technology" width={200} />
             </div>
             <div className="eachCategory">
               <h3>Home</h3>
-              <img className="categoryPics" src={home} alt="Home" />
+              <img src={home} alt="Home" width={212}/>
             </div>
             <div className="eachCategory">
               <h3>Leisure</h3>
-              <img className="categoryPics" src={leisure} alt="Leisure" />
+              <img src={leisure} alt="Leisure" width={200}/>
             </div>
             <div className="eachCategory">
               <h3>Others</h3>
-              <img className="categoryPics" src={books} alt="Others" />
+              <img  src={books} alt="Others" width={200}/>
             </div>
           </div>
         </div>
       </div>
       <div className="thirdSection">
         <div>
-          <h2 className="h2title">How to start renting?</h2>
+          <h2 className="h2titleRenting">How to start renting?</h2>
         </div>
         <div>
           <img className="stepsImage" src={steps} alt="steps to rent" />
