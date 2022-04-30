@@ -68,7 +68,10 @@ export function SignupForm() {
               setPassword(e.target.value);
             }}
           />
-          <button disabled={!(email && password && firstName && lastName && username)}>Signup</button>
+          <p className="signupAlert">
+          *The password must be at least 6 characters 
+          </p>
+          <button className="signupbtn" disabled={!(email && password && firstName && lastName && username)}>Signup</button>
         </form>
         <p className="loginLink">
           Already have an account? <Link to="/login">Click here</Link>

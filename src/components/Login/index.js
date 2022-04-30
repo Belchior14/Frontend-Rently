@@ -14,7 +14,8 @@ export function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="loginDiv">
+    <form className="loginForm" onSubmit={handleSubmit}>
       <label>Email:</label>
       <input
         type="email"
@@ -33,7 +34,8 @@ export function LoginForm() {
           setPassword(e.target.value);
         }}
       />
-      <button type="onSubmit">Login</button>
+      <button className="loginbtn" type="onSubmit">Login</button>
     </form>
+    </div>
   );
 }
