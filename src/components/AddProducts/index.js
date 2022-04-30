@@ -54,7 +54,9 @@ export function AddProductsForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="addProductsDiv">
+<form onSubmit={handleSubmit}>
+  <h2>Add a new product</h2>
       <div className="addProductForm">
         <label>Category:</label>
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
@@ -65,19 +67,21 @@ export function AddProductsForm() {
           <option option="Others">Others</option>
         </select>
 
-        <label>Product Name:</label>
+        <label></label>
         <input
           type="text"
           id="name"
+          placeholder="Product name"
           value={name}
           onChange={(e) => {
             setName(e.target.value);
           }}
         />
-        <label>Description:</label>
+        <label></label>
         <textarea
           type="text"
           id="description"
+          placeholder="Description"
           value={description}
           onChange={(e) => {
             setDescription(e.target.value);
@@ -86,29 +90,32 @@ export function AddProductsForm() {
 
         <label>Image:</label>
         <FileUpload setImage={setImage} />
-        <label>Price:</label>
+        <label></label>
         <input
           type="number"
           id="price"
+          placeholder="Price"
           value={price}
           onChange={(e) => {
             setPrice(e.target.value);
           }}
         />
-        <label>City:</label>
+        <label></label>
 
         <input
           type="text"
           id="city"
+          placeholder="City"
           value={city}
           onChange={(e) => {
             setCity(e.target.value);
           }}
         />
-        <label>Country:</label>
+        <label></label>
         <input
           type="text"
           id="country"
+          placeholder="Country"
           value={country}
           onChange={(e) => {
             setCountry(e.target.value);
@@ -117,5 +124,7 @@ export function AddProductsForm() {
         <button disabled={!(category && name && description && image && price && city && country)}>Add Product</button>
       </div>
     </form>
+    </div>
+  
   );
 }

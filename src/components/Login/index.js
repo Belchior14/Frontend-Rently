@@ -17,7 +17,7 @@ export function LoginForm() {
   return (
     <div className="loginDiv">
     <form className="loginForm" onSubmit={handleSubmit}>
-    <h1>Log in to your account</h1>
+    <h2>Log in to your account</h2>
       <label></label>
       <input
         type="email"
