@@ -7,6 +7,7 @@ import home from "./robot Vacuum.png";
 import leisure from "./leisure.png";
 import books from "./books.png";
 import steps from "./Steps.png";
+import confetti from "./confetti.png"
 
 export function Home() {
   return (
@@ -64,6 +65,11 @@ export function Home() {
         </div>
         <div>
           <img className="stepsImage" src={steps} alt="steps to rent" />
+        </div>
+        <div className="enjoyMessage">
+          <img className="confetti" src={confetti} alt="confetti"/>
+          <p>Start enjoying your product!</p>
+          <img className="confetti" src={confetti} alt="confetti"/>
         </div>
       </div>
     </div>
