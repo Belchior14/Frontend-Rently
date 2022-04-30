@@ -9,6 +9,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 .h1Home{
@@ -19,32 +21,26 @@
     width: 650px;
 }
 
-.Btn {
-    display: flex;
-    flex-direction: column;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    color: #FFFFFF;
-    font-family: Arial;
-    font-size: 19px;
-    font-weight: 100;
-    padding: 10px;
-    background-color: #03CBD6;
-    -webkit-box-shadow: 1px 1px 5px 0 #000000;
-    -moz-box-shadow: 1px 1px 5px 0 #000000;
-    box-shadow: 1px 1px 5px 0 #000000;
-    text-shadow: 1px 1px 9px #000000;
-    text-decoration: none;
-    display: inline-block;
+ .Btn {
+    font-size:15px;
+    font-family:Arial;
+    width:140px;
+    height:50px;
+    border-width:0px;
+    color:#ffffff;
+    border-color:rgba(255, 255, 255, 1);
+    font-weight:bold;
+    border-top-left-radius:25px;
+    border-top-right-radius:25px;
+    border-bottom-left-radius:25px;
+    border-bottom-right-radius:25px;
+    box-shadow:inset 0px 1px 0px 0px #97c4fe;
+    text-shadow:inset 0px 1px 0px #1570cd;
+    background:linear-gradient(rgba(3, 203, 214, 1), rgba(3, 203, 214, 1));
     cursor: pointer;
-    text-align: center;
- }
- 
- .Btn:hover {
-    background: #1E8ED0;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    text-decoration: none;
- }
+  }
+  
+  .Btn:hover {
+    background: linear-gradient(rgb(10, 193, 202), rgb(5, 97, 102));
+  }
+        
