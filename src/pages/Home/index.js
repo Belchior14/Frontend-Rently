@@ -32,8 +32,8 @@ export function Home() {
 
       <div className="secondsection">
         <div className="categories">
-          <div>
-            <h2 className="h2title">Categories</h2>
+          <div className="categoriesTitle">
+            <h2 className="h2title">Explore our categories</h2>
           </div>
           <div className="categoriesExamples">
             <div className="eachCategory">
