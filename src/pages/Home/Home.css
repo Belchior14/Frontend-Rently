@@ -1,3 +1,9 @@
+.homePage{
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+}
+
 .heroSection{
     display: flex;
     justify-content: space-around;
@@ -43,4 +49,41 @@
   .Btn:hover {
     background: linear-gradient(rgb(10, 193, 202), rgb(5, 97, 102));
   }
+
+  .categoryPics{
+    width: 300px;
+  }
+
+  .secondsection{
+      display: flex;
+    flex-direction: column;
+  }
+
+  .h2title{
+    text-align: center;
+  }
+
+  .categoriesExamples{
+      display: flex;
+      justify-content: space-evenly;   
+  }
+
+  .eachCategory{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .thirdSection{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .stepsImage{
+      width: 105%;
+  }
+
+
         
