@@ -16,8 +16,8 @@ export function SignupForm() {
   return (
     <div className="signupDiv">
       <div>
-        <h2>Create an Account</h2>
         <form className="signupForm" onSubmit={handleSubmit}>
+        <h2>Create an Account</h2>
           <label className="firstName"></label>
           <input
             type="text"
@@ -72,10 +72,10 @@ export function SignupForm() {
           *The password must be at least 6 characters 
           </p>
           <button className="signupbtn" disabled={!(email && password && firstName && lastName && username)}>Signup</button>
-        </form>
-        <p className="loginLink">
+          <p className="loginLink">
           Already have an account? <Link to="/login">Click here</Link>
         </p>
+        </form>
       </div>
     </div>
   );

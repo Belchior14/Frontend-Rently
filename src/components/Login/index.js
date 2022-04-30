@@ -17,19 +17,22 @@ export function LoginForm() {
   return (
     <div className="loginDiv">
     <form className="loginForm" onSubmit={handleSubmit}>
-      <label>Email:</label>
+    <h1>Log in to your account</h1>
+      <label></label>
       <input
         type="email"
         id="email"
+        placeholder="Email"
         value={email}
         onChange={(e) => {
           setEmail(e.target.value);
         }}
       />
-      <label>Password:</label>
+      <label></label>
       <input
         type="password"
         id="password"
+        placeholder="Password"
         value={password}
         onChange={(e) => {
           setPassword(e.target.value);
