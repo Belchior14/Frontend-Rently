@@ -1,14 +1,28 @@
-
 .signupDiv{
-    width: 50vh ;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.signupForm {
+  width: 40%;
+  padding: 30px;
+  margin: 100px 420px;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  width: 50vh;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 2px 2px rgb(0, 204, 255);
+  border: 0.1em solid rgba(20, 94, 143, 0.521);
+  border-radius: 0.5em;
+  text-align: center;
+}
+.signupForm {
+/* display: flex;
+flex-direction: column;
+width: 50vh; */
+right: 0;
+width: 65%;
+height: 100%;
+opacity: 1;
+font-weight: bold;
+color: #035E7B;
+transition: 2s;
+}
+.signupInput{
+align-items: center;
 }
