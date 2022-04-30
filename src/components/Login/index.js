@@ -1,5 +1,6 @@
 import { AuthContext } from "context";
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Login.css"
 
 export function LoginForm() {
@@ -35,6 +36,9 @@ export function LoginForm() {
         }}
       />
       <button className="loginbtn" type="onSubmit">Login</button>
+      <p className="signupLink">
+        Don't have an account? <Link to="/signup">Sign up</Link>
+      </p>
     </form>
     </div>
   );
