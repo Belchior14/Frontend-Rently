@@ -1,5 +1,6 @@
 import { client } from "client";
 import { useState } from "react";
+import "./addComments.css";
 
 export function AddCommentsForm() {
   const [title, setTitle] = useState("");
@@ -28,9 +29,10 @@ export function AddCommentsForm() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>Title:</label>
+      <form className="addComment" onSubmit={handleSubmit}>
+        <label className="titleComment">Title:</label>
         <input
+        className="addTitle"
           type="text"
           id="title"
           value={title}
@@ -38,8 +40,9 @@ export function AddCommentsForm() {
             setTitle(e.target.value);
           }}
         />
-        <label>Description:</label>
+        <label className="descriptionComment">Description:</label>
         <textarea
+        className="addDescription"
           type="text"
           id="description"
           value={description}
@@ -47,11 +50,9 @@ export function AddCommentsForm() {
             setDescription(e.target.value);
           }}
         />
-        <button disabled={!(title && description)}>Add comment</button>
+        <button className="buttonComments" disabled={!(title && description)}>Add comment</button>
       </form>
-      <div>
-          
-      </div>
+      <div></div>
     </div>
   );
 }

@@ -36,37 +36,47 @@ export function SingleProductShow() {
       {product ? (
         !rentedProduct ? (
           <div>
-            <div>
-              {" "}
-              <Link to={`/profile/${userOfTheProduct._id}`}>
-                <h1>{userOfTheProduct.firstName}</h1>
-              </Link>
-              <h3>{product.name}</h3>
-              <h3>{product.price}</h3>
-              <h3>{product.city}</h3>
-              {product.rented === false && product.user !== user._id && (
+            <div className="product">
+              <div className="productName">
+                <h1>{product.name}</h1>
+              </div>
+              <div className="productDetails">
+                <div>
+                  <img className="productImage" src={product.image} alt={product.image} />
+                </div>
+                <div className="theProductDetails">
+                  <Link to={`/profile/${userOfTheProduct._id}`}>
+                    <h3>{userOfTheProduct.firstName}</h3>
+                  </Link>
+                  <h3> Price: {product.price}€</h3>
+                  <h3>Location: {product.city}, {product.country}</h3>
+                </div>
+              </div>
+              <div className="productDescription">{product.description}</div>
+              {product.rented === false && product.user._id !== user._id && (
                 <RentProductButton />
               )}
               {product.rented === true &&
                 user.rentedProducts.includes(product._id) && (
                   <UnrentProductButton />
                 )}
-              <button onClick={() => setRentedProduct(true)}>display</button>
+{/*               <button onClick={() => setRentedProduct(true)}>display</button> */}
             </div>
-            <div>
+            <div className="comments">
+              <div>
+                <h1>Comments</h1>
+              </div>
               <AddCommentsForm />
               <div>
                 {comments.map((comment) => {
                   return (
                     <div>
-                      {console.log(comments)}
                       <h4>Comment by:{comment.username}</h4>
                       <h3>{comment.title}</h3>
                       <h3>{comment.description}</h3>
                     </div>
                   );
                 })}
-                <h1>{product.comments.title}</h1>
               </div>
             </div>
           </div>

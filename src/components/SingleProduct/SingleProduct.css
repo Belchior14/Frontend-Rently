@@ -1,0 +1,26 @@
+.productImage{
+    width: 250px;
+    border-radius: 10px;
+}
+
+.product {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.productDetails{
+    display: flex;
+    gap: 15px;
+}
+
+.productDescription{
+    border: 1px solid black;
+    height: 75px;
+    width: 1000px;
+}
+
+.comments{
+    padding: 20px;
+}
