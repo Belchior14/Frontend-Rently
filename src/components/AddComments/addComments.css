@@ -4,16 +4,16 @@
   gap: 10px;
 }
 
-.titleComment{
-    font-weight: bold;
+.titleComment {
+  font-weight: bold;
 }
 
 .addTitle {
   width: 250px;
 }
 
-.descriptionComment{
-    font-weight: bold;
+.descriptionComment {
+  font-weight: bold;
 }
 
 .addDescription {
@@ -44,4 +44,13 @@
 
 .buttonComments:hover {
   background: linear-gradient(rgb(10, 193, 202), rgb(5, 97, 102));
+}
+
+.theComments {
+  background-color: rgb(199, 243, 246);
+  width: 1000px;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-top: 1px;
+  padding-bottom: 1px;
 }

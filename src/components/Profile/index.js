@@ -72,8 +72,12 @@ export function ProfileShow() {
               </div>
               <div className="product__actions"></div>
             </Link>
+            {user._id === userProfile._id ? 
+            <div>
             <button onClick={() => handleEdit(product._id)}>Edit</button>
             <button onClick={() => handleDelete(product._id)}>Delete</button>
+            </div> : null}
+            
           </div>
         );
       })}

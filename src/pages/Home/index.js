@@ -8,8 +8,13 @@ import leisure from "./leisure.png";
 import books from "./books.png";
 import steps from "./Steps.png";
 import confetti from "./confetti.png"
+import { AuthContext } from "context";
+import { useContext } from "react";
 
 export function Home() {
+
+  const user = useContext(AuthContext)
+
   return (
     <div className="homePage">
       <div className="heroSection">

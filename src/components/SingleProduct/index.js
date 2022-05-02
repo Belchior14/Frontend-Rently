@@ -42,14 +42,20 @@ export function SingleProductShow() {
               </div>
               <div className="productDetails">
                 <div>
-                  <img className="productImage" src={product.image} alt={product.image} />
+                  <img
+                    className="productImage"
+                    src={product.image}
+                    alt={product.image}
+                  />
                 </div>
                 <div className="theProductDetails">
                   <Link to={`/profile/${userOfTheProduct._id}`}>
                     <h3>{userOfTheProduct.firstName}</h3>
                   </Link>
                   <h3> Price: {product.price}€</h3>
-                  <h3>Location: {product.city}, {product.country}</h3>
+                  <h3>
+                    Location: {product.city}, {product.country}
+                  </h3>
                 </div>
               </div>
               <div className="productDescription">{product.description}</div>
@@ -60,7 +66,7 @@ export function SingleProductShow() {
                 user.rentedProducts.includes(product._id) && (
                   <UnrentProductButton />
                 )}
-{/*               <button onClick={() => setRentedProduct(true)}>display</button> */}
+              {/*               <button onClick={() => setRentedProduct(true)}>display</button> */}
             </div>
             <div className="comments">
               <div>
@@ -70,10 +76,13 @@ export function SingleProductShow() {
               <div>
                 {comments.map((comment) => {
                   return (
-                    <div>
-                      <h4>Comment by:{comment.username}</h4>
-                      <h3>{comment.title}</h3>
-                      <h3>{comment.description}</h3>
+                    <div key={comment.id} className="theComments">
+                      <Link to={`/profile/${comment.user}`}>
+                        <h5>Comment by: {comment.username}</h5>
+                      </Link>
+
+                      <p>{comment.title}</p>
+                      <p>{comment.description}</p>
                     </div>
                   );
                 })}
