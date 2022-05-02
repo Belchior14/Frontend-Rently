@@ -66,8 +66,6 @@ export function AddProductsForm() {
           <option option="Leisure">Leisure</option>
           <option option="Others">Others</option>
         </select>
-
-        <label></label>
         <input
           type="text"
           id="name"
@@ -77,7 +75,6 @@ export function AddProductsForm() {
             setName(e.target.value);
           }}
         />
-        <label></label>
         <textarea
           type="text"
           id="description"
@@ -87,10 +84,8 @@ export function AddProductsForm() {
             setDescription(e.target.value);
           }}
         />
-
         <label>Image:</label>
         <FileUpload setImage={setImage} />
-        <label></label>
         <input
           type="number"
           id="price"
@@ -100,8 +95,6 @@ export function AddProductsForm() {
             setPrice(e.target.value);
           }}
         />
-        <label></label>
-
         <input
           type="text"
           id="city"
@@ -111,7 +104,6 @@ export function AddProductsForm() {
             setCity(e.target.value);
           }}
         />
-        <label></label>
         <input
           type="text"
           id="country"
