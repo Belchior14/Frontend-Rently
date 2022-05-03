@@ -2,7 +2,7 @@ import { client } from "client";
 import { useState } from "react";
 import "./addComments.css";
 
-export function AddCommentsForm() {
+export function AddCommentsForm({setOther}) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -25,6 +25,7 @@ export function AddCommentsForm() {
     addComment(title, description);
     setTitle("");
     setDescription("");
+    setOther(true)
   };
 
   return (

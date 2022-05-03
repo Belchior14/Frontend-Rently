@@ -1,6 +1,10 @@
-import { useState } from "react";
+import { AuthContext } from "context";
 import { loadStripe } from "@stripe/stripe-js";
 import "./CheckOutForm25.css"
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { client } from "client";
+
 
 let stripePromise;
 
@@ -13,6 +17,9 @@ const getStripe = () => {
 };
 
 const Checkout25 = () => {
+  const { user, getUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [money, setMoney] = useState("helloTest");
   const [stripeError, setStripeError] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const item = {
@@ -41,13 +48,25 @@ const Checkout25 = () => {
 
   if (stripeError) alert(stripeError);
 
+  const handleAddMoney = async () => {
+    try {
+      const response = await client.put(`/checkout/${user._id}/25`);
+      setMoney(response.data.money);
+      getUser()
+      navigate(`/checkout/${user._id}`)
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="checkout">
 
       <button
         className="checkout-button"
-        onClick={redirectToCheckout}
+        onClick={handleAddMoney}
         disabled={isLoading}
+        //redirectToCheckout
       >
 
         <div className="text-container">

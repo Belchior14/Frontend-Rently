@@ -13,6 +13,7 @@ export function SingleProductShow() {
   const [userOfTheProduct, setUserOfTheProduct] = useState("");
   const [rentedProduct, setRentedProduct] = useState(false);
   const [comments, setComments] = useState([]);
+  const [other, setOther] = useState(false);
 
   const oneProduct = async () => {
     try {
@@ -29,7 +30,7 @@ export function SingleProductShow() {
 
   useEffect(() => {
     oneProduct();
-  }, []);
+  }, [other]);
 
   return (
     <div>
@@ -72,12 +73,13 @@ export function SingleProductShow() {
               <div>
                 <h1>Comments</h1>
               </div>
-              <AddCommentsForm />
+              <AddCommentsForm setOther = {setOther} />
               <div>
                 {comments.map((comment) => {
                   return (
                     <div key={comment.id} className="theComments">
                       <Link to={`/profile/${comment.user}`}>
+                        {console.log(comment)}
                         <h5>Comment by: {comment.username}</h5>
                       </Link>
 
