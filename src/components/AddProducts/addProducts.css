@@ -18,12 +18,12 @@ display: flex;
 flex-direction: column;
 right: 0;
 height: 100%;
+padding: 5px;
 opacity: 1;
 font-weight: bold;
 color: #03cbd6ff;
 transition: 2s;
-gap: 7px;
-
+gap: 30px;
 }
 .addProductBTN {
     font-size:15px;
@@ -76,4 +76,10 @@ gap: 7px;
 
   .addProducth2{
     color: #03cbd6ff;
+  }
+
+  input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
   }
