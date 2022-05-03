@@ -56,7 +56,9 @@ export function AddProductsForm() {
   return (
     <div className="addProductsDiv">
 <form onSubmit={handleSubmit}>
+  <div className="addProducth2">
   <h2>Add a new product</h2>
+    </div>
       <div className="addProductForm">
         <label>
           <div>Category</div>
