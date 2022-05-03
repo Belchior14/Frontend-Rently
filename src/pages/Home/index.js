@@ -24,7 +24,7 @@ export function Home() {
             <br />
             products while spending
             <br />
-            half of the money B
+            half of the money
           </h1>
           <Link to="/signup">
             <button className="Btn">Start Renting</button>

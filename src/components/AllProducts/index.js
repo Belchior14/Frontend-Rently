@@ -70,7 +70,7 @@ export function AllProductsShow() {
         />
       </form>
 
-      <h1>Products $$</h1>
+      <h1>Products</h1>
       {
         <div className="allProfileProducts">
           {filterProducts().map((product) => {
