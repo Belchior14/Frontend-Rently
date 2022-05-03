@@ -4,7 +4,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home, Login, Signup , NotFound, AddProducts, AllProducts, Profile, SingleProduct,CheckOutForm, SuccessPage, CancelPage } from "pages";
-import { EditProductForm, PrivateRoute } from "components";
+import { EditProductForm, Footer, PrivateRoute } from "components";
 import { AuthContextProvider } from "context";
 import { Navbar } from "components";
 
@@ -29,6 +29,7 @@ ReactDOM.render(
       <Route path="/cancel" element={<CancelPage/> }/>
       <Route path="*" element={<NotFound/>} />
     </Routes>
+    <Footer/>
     </AuthContextProvider>
     </BrowserRouter>
   

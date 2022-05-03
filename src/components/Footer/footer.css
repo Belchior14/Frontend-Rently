@@ -1,0 +1,29 @@
+.footer {
+    background-color:#03CBD6;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+   
+    
+   }
+
+   .divFooter{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       gap: 12px;
+   }
+
+   .cristinaFooter, .belchiorFooter{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       gap: 5px;
+   }
+
+   .logos{
+       color: white;
+   }
