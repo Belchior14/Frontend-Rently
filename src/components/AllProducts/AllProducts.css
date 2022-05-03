@@ -1,0 +1,21 @@
+.allProfileProducts{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 80px;   
+}
+
+.productProfile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border: 20px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.productImg{
+    opacity: 1;
+    transition: opacity 1s ease 0s;
+}
+

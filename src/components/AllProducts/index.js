@@ -70,7 +70,7 @@ export function AllProductsShow() {
         />
       </form>
 
-      <h1>Products</h1>
+      <h1 className="productsTitle">All Products</h1>
       {
         <div className="allProfileProducts">
           {filterProducts().map((product) => {
@@ -80,10 +80,10 @@ export function AllProductsShow() {
                   className="profileProductName"
                   to={`/product/${product._id}`}
                 >
-                  <div>
+                  <div className="productProfile">
                     <h3>{product.name}</h3>
                     <img
-                      className="productImg"
+                      className="productImg" 
                       src={product.image}
                       alt={product.image}
                     />

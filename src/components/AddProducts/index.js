@@ -58,7 +58,9 @@ export function AddProductsForm() {
 <form onSubmit={handleSubmit}>
   <h2>Add a new product</h2>
       <div className="addProductForm">
-        <label>Category:</label>
+        <label>
+          <div>Category</div>
+          </label>
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="Technology">Technology</option>
           <option value="Sports">Sports</option>
@@ -84,7 +86,7 @@ export function AddProductsForm() {
             setDescription(e.target.value);
           }}
         />
-        <label>Image:</label>
+        <label>Image</label>
         <FileUpload setImage={setImage} />
         <input
           type="number"
@@ -113,7 +115,7 @@ export function AddProductsForm() {
             setCountry(e.target.value);
           }}
         />
-        <button disabled={!(category && name && description && image && price && city && country)}>Add Product</button>
+        <button className="addProductBTN" disabled={!(category && name && description && image && price && city && country)}>Add Product</button>
       </div>
     </form>
     </div>

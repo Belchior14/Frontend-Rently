@@ -14,8 +14,62 @@
 }
 
 .addProductForm {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    margin-left: 50px;
+display: flex;
+flex-direction: column;
+right: 0;
+height: 100%;
+opacity: 1;
+font-weight: bold;
+color: #03cbd6ff;
+transition: 2s;
+gap: 7px;
+
 }
+.addProductBTN {
+    font-size:15px;
+    font-family:Arial;
+    width:140px;
+    height:35px;
+    border-width:0px;
+    color:#ffffff;
+    border-color:rgba(255, 255, 255, 1);
+    font-weight:bold;
+    border-top-left-radius:25px;
+    border-top-right-radius:25px;
+    border-bottom-left-radius:25px;
+    border-bottom-right-radius:25px;
+    box-shadow:inset 0px 1px 0px 0px #97c4fe;
+    text-shadow:inset 0px 1px 0px #1570cd;
+    background:linear-gradient(rgba(3, 203, 214, 1), rgba(3, 203, 214, 1));
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .signupbtn:hover {
+    background: linear-gradient(rgb(10, 193, 202), rgb(5, 97, 102));
+}
+.productImageBTN {
+    font-size:15px;
+    font-family:Arial;
+    width:140px;
+    height:35px;
+    border-width:0px;
+    color:#ffffff;
+    border-color:rgba(255, 255, 255, 1);
+    font-weight:bold;
+    border-top-left-radius:25px;
+    border-top-right-radius:25px;
+    border-bottom-left-radius:25px;
+    border-bottom-right-radius:25px;
+    box-shadow:inset 0px 1px 0px 0px #97c4fe;
+    text-shadow:inset 0px 1px 0px #1570cd;
+    background:linear-gradient(rgba(3, 203, 214, 1), rgba(3, 203, 214, 1));
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .productImageBTN:hover {
+    background: linear-gradient(rgb(10, 193, 202), rgb(5, 97, 102));
+  } 
