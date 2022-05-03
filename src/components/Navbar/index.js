@@ -8,35 +8,38 @@ export function Navbar() {
   return (
     <div className="mainNavbar">
       <Link className="navLink" to="/">
-        <a className="navbarLinks">Home</a>
+        <p className="navbarLinks">Home</p>
+      </Link>
+      <Link className="navLink" to="/about">
+        <p className="navbarLinks">About</p>
       </Link>
         <Link className="navLink" to="/product">
-          <a className="navbarLinks">Products</a>
+          <p className="navbarLinks">Products</p>
         </Link>
         {user && (
           <Link className="navLink" to="/product/add">
-            <a className="navbarLinks">Add Products</a>
+            <p className="navbarLinks">Add Products</p>
           </Link>
         )}
         {user && (
           <Link className="navLink" to={`/profile/${user._id}`}>
-            <a className="navbarLinks">Profile</a>
+            <p className="navbarLinks">Profile</p>
           </Link>
         )}
         {!user && (
           <Link className="navLink" to="/signup">
-            <a className="navbarLinks">Signup</a>
+            <p className="navbarLinks">Signup</p>
           </Link>
         )}
         {!user && (
           <Link className="navLink" to="/login">
-            <a className="navbarLinks">Login</a>
+            <p className="navbarLinks">Login</p>
           </Link>
         )}
         {user && (
-          <a className="navLink" onClick={logout}>
+          <p className="navLink" onClick={logout}>
             Logout
-          </a>
+          </p>
         )}
       </div>
   );
