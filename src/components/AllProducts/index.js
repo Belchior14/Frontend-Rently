@@ -42,6 +42,9 @@ export function AllProductsShow() {
 
   return (
     <div className="theProducts">
+      <div className="searchFeature">
+      <div className="wrap">
+      <div className="search">
       <form action="/" method="get">
         <label htmlFor="header-search">
           <span className="visually-hidden"></span>
@@ -50,6 +53,7 @@ export function AllProductsShow() {
           value={searchQuery}
           onInput={(e) => setSearchQuery(e.target.value)}
           type="text"
+          class="searchTerm"
           id="header-search"
           placeholder="Search products"
           name="s"
@@ -64,11 +68,16 @@ export function AllProductsShow() {
           value={searchCity}
           onInput={(e) => setSearchCity(e.target.value)}
           type="text"
+          class="searchTerm"
           id="header-search"
           placeholder="Search cities"
           name="s"
         />
       </form>
+      </div>
+      </div>
+      </div>
+      
 
       <h1 className="productsTitle">All Products</h1>
       {
