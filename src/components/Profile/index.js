@@ -60,7 +60,7 @@ export function ProfileShow() {
       <h1>Products for rent</h1>
       {userProfile.products?.map((product) => {
         return (
-          <div className="profileProduct">
+          <div className="profilePageProduct">
             <Link className="profileProductName" to={`/product/${product._id}`}>
               <div>
                 <h3>{product.name}</h3>
