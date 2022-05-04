@@ -14,6 +14,7 @@ export {UnrentProductButton} from "./UnrentProduct"
 export {Success} from "./Success"
 export {Cancel} from "./Cancel"
 export {AddCommentsForm} from "./AddComments"
+export {Footer} from "./Footer"
 
 
 
