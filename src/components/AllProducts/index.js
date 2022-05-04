@@ -44,7 +44,7 @@ export function AllProductsShow() {
     <div className="theProducts">
       <form action="/" method="get">
         <label htmlFor="header-search">
-          <span className="visually-hidden">Search Products</span>
+          <span className="visually-hidden"></span>
         </label>
         <input
           value={searchQuery}
@@ -58,7 +58,7 @@ export function AllProductsShow() {
 
       <form action="/" method="get">
         <label htmlFor="header-search">
-          <span className="visually-hidden">Search Cities</span>
+          <span className="visually-hidden"></span>
         </label>
         <input
           value={searchCity}

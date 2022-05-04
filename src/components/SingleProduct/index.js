@@ -53,7 +53,7 @@ export function SingleProductShow() {
                   <Link to={`/profile/${userOfTheProduct._id}`}>
                     <h3>{userOfTheProduct.firstName}</h3>
                   </Link>
-                  <h3> Price: {product.price}€</h3>
+                  <h3> {product.price}€</h3>
                   <h3>
                     Location: {product.city}, {product.country}
                   </h3>

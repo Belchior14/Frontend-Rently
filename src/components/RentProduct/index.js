@@ -19,6 +19,6 @@ export function RentProductButton () {
       };
 
     return(
-        <button onClick={handleRentProduct}>Rent this product</button>
+        <button className="rentProductBTN" onClick={handleRentProduct}>Rent this product</button>
     )
 }
