@@ -51,9 +51,12 @@ export function ProfileShow() {
 
   return (
     <div>
+      
+  
       <h2>
         {userProfile.firstName} {userProfile.lastName}
         {user._id === userProfile._id ? ` - ${userProfile.money}€` : null}
+        
       </h2>
       <img src={userProfile.image} alt={userProfile.image} />
       {user._id === userProfile._id ? <AddMoneyOption /> : null}

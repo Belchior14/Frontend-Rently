@@ -2,7 +2,6 @@ import { client } from "client";
 import { AuthContext } from "context";
 import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { FileUpload } from "components/FileUpload";
 import "./editProduct.css"
 
 export function EditProductForm() {
