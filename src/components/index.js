@@ -16,6 +16,7 @@ export {Cancel} from "./Cancel"
 export {AddCommentsForm} from "./AddComments"
 export {Footer} from "./Footer"
 export {CheckoutForm} from "./CheckOutForm25"
+export {EditProfile} from "./EditProfile"
 
 
 

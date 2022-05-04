@@ -95,7 +95,7 @@ export function CheckoutForm() {
             <div class="input-box">
               <input
                 type="tel"
-                placeholder="Card Number"
+                placeholder="1111-1111-1111-1111"
                 required
                 class="name"
               />

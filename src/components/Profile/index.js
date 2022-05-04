@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { AddMoneyOption } from "components/AddMoney";
 import { AuthContext } from "context";
 import { useNavigate } from "react-router-dom";
+import {EditProfile} from "components"
 
 export function ProfileShow() {
   const navigate = useNavigate();
@@ -59,6 +60,7 @@ export function ProfileShow() {
         
       </h2>
       <img src={userProfile.image} alt={userProfile.image} />
+      <EditProfile/>
       {user._id === userProfile._id ? <AddMoneyOption /> : null}
       <h1>Products for rent</h1>
       {userProfile.products?.map((product) => {
