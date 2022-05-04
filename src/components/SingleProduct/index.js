@@ -33,7 +33,7 @@ export function SingleProductShow() {
   }, [other]);
 
   return (
-    <div>
+    <div className="productContainer">
       {product ? (
         !rentedProduct ? (
           <div>
@@ -70,8 +70,8 @@ export function SingleProductShow() {
               {/*               <button onClick={() => setRentedProduct(true)}>display</button> */}
             </div>
             <div className="comments">
-              <div>
-                <h1>Comments</h1>
+              <div className="addComment">
+                <h1> Add a Comment</h1>
               </div>
               <AddCommentsForm setOther = {setOther} />
               <div>

@@ -1,10 +1,18 @@
+.productContainer {
+ display: flex;
+ padding: 40px;
+ gap: 10px;
+ margin: 5px;
+ margin-left: 10px;
+ justify-content: center;
+}
+
 .productImage{
     width: 250px;
     border-radius: 10px;
 }
 
 .product {
-    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -16,11 +24,16 @@
 }
 
 .productDescription{
-    border: 1px solid black;
     height: 75px;
     width: 1000px;
+    background-color: #f5f5f5;
+    padding: 10px;
 }
 
 .comments{
-    padding: 20px;
+ gap: 10px;
+}
+
+.addComment{
+    gap: 60px;
 }

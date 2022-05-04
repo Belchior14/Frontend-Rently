@@ -18,6 +18,6 @@ export function UnrentProductButton () {
         };
   
       return(
-          <button onClick={handleUnrentProduct}>Return this product</button>
+          <button className="unrentedProductBTN" onClick={handleUnrentProduct}>Return this product</button>
       )
   }
