@@ -1,40 +1,31 @@
 import { AuthContext } from "context";
-import { loadStripe } from "@stripe/stripe-js";
 import "./CheckOutForm25.css";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { client } from "client";
 
 export function CheckoutForm() {
-
-  const { user, getUser } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-  
+
   const [money, setMoney] = useState("helloTest");
 
   const handleAddMoney = async () => {
     try {
       const response = await client.put(`/profile/${user._id}`);
       setMoney(response.data.money);
-      navigate(`/profile/${user._id}`)
+      navigate(`/profile/${user._id}`);
     } catch (error) {
       console.log(error);
     }
   };
 
-
   return (
     <div className="paymentDiv">
       <div class="wrapper">
-      <div class="input-box">
-              <input
-                type="number"
-                placeholder="Amount to pay"
-                required
-                class="name"
-                id="price"
-              />
-            </div>
+        <div className="ammount">
+          <label>100€ Charge</label>
+        </div>
         <form method="POST">
           <h4>Account</h4>
           <div class="input-group">
@@ -140,7 +131,13 @@ export function CheckoutForm() {
           </div>
           <div class="input-group">
             <div class="input-box">
-              <button onClick={handleAddMoney} className="paymentButton" type="submit">PAY NOW</button>
+              <button
+                onClick={handleAddMoney}
+                className="paymentButton"
+                type="submit"
+              >
+                PAY NOW
+              </button>
             </div>
           </div>
         </form>
