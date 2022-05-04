@@ -1,7 +1,6 @@
 .productContainer {
  display: flex;
  padding: 40px;
- gap: 10px;
  margin: 5px;
  margin-left: 10px;
  justify-content: center;
@@ -15,7 +14,7 @@
 .product {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 20px;
 }
 
 .productDetails{
@@ -31,9 +30,15 @@
 }
 
 .comments{
- gap: 10px;
+ padding-top: 90px;
+ 
 }
 
 .addComment{
     gap: 60px;
+}
+
+.h3UserProduct{
+ text-decoration: none;
+ color: #03CBD6
 }

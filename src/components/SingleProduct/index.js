@@ -50,7 +50,7 @@ export function SingleProductShow() {
                   />
                 </div>
                 <div className="theProductDetails">
-                  <Link to={`/profile/${userOfTheProduct._id}`}>
+                  <Link className="h3UserProduct" to={`/profile/${userOfTheProduct._id}`}>
                     <h3>{userOfTheProduct.firstName}</h3>
                   </Link>
                   <h3> {product.price}€</h3>
