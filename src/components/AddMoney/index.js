@@ -11,18 +11,18 @@ export function AddMoneyOption() {
 
   const handleAddMoney = async () => {
     try {
-/*       const response = await client.put(`/profile/${user._id}`);
+      const response = await client.put(`/profile/${user._id}`);
       setMoney(response.data.money);
-      getUser() */
+      getUser()
       navigate(`/checkout/${user._id}`)
     } catch (error) {
       console.log(error);
     }
   };
-
   return (
     <div>
       <button onClick={handleAddMoney}>Charge your account</button>
+      
     </div>
   );
 }

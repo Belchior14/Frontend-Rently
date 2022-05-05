@@ -2,8 +2,21 @@
     width: 150px;
 }
 
+.userProfile{
+    margin-top: 100px;
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.userProfileImage{
+    width: 150px;
+}
+
 .userInfo{
-    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .productImg{
@@ -20,14 +33,9 @@ width: 150px;
     gap: 20px;
 }
 
-
-.profilePageProduct{
-    border: 2px solid rgb(128, 105, 0);
-    width: 200px;
+.userProducts{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
+    gap: 15px;
 }
 
 .profileProduct:hover{
@@ -36,6 +44,12 @@ width: 150px;
 
 .profileProductName{
     text-decoration: none;
-    color: rgb(202, 74, 15);
+    color: #00B4CC;
 }
 
+.userRentedProducts{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 100px;
+
+}

@@ -1,5 +1,4 @@
 .theProducts{
-    display: flexbox;
     padding: 40px;
 }
 
@@ -47,6 +46,7 @@
     border-radius: 5px 5px;
     outline: none;
     color: #9DBFAF;
+    margin-top: 50px;
   }
   
   .searchTerm:focus{

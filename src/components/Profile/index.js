@@ -5,14 +5,14 @@ import { Link, useParams } from "react-router-dom";
 import { AddMoneyOption } from "components/AddMoney";
 import { AuthContext } from "context";
 import { useNavigate } from "react-router-dom";
-import {EditProfile} from "components"
+import { EditProfile } from "components";
 
 export function ProfileShow() {
   const navigate = useNavigate();
   const { id } = useParams();
   const [userProfile, setUserProfile] = useState("");
   const { user } = useContext(AuthContext);
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState([]);
 
   const oneUser = async () => {
     try {
@@ -24,18 +24,14 @@ export function ProfileShow() {
   };
 
   const getProducts = async () => {
-    try{
-
-      const response = await client.get("/products")
-      setProducts(response.data.product)
-
-    } catch(error) {
-      console.log(error)
+    try {
+      const response = await client.get("/products");
+      setProducts(response.data.product);
+    } catch (error) {
+      console.log(error);
     }
+  };
 
-
-  }
- 
   const handleDelete = async (id) => {
     await client.delete(`/product/${id}`);
     oneUser();
@@ -47,54 +43,86 @@ export function ProfileShow() {
 
   useEffect(() => {
     oneUser();
-  }, [{id,products}]);
-
+  }, [{ id, products }]);
 
   return (
-    <div>
-      
-  
+    <div className="userProfile">
+      <div className="userInfo">
       <h2>
         {userProfile.firstName} {userProfile.lastName}
         {user._id === userProfile._id ? ` - ${userProfile.money}€` : null}
-        
       </h2>
-      <img src={userProfile.image} alt={userProfile.image} />
-      <EditProfile/>
+      <img
+        className="userProfileImage"
+        src={userProfile.image}
+        alt={userProfile.image}
+      />
+      <EditProfile />
+      <div>
       {user._id === userProfile._id ? <AddMoneyOption /> : null}
+      </div>
+
+      </div>
+
       <h1>Products for rent</h1>
-      {userProfile.products?.map((product) => {
-        return (
-          <div className="profilePageProduct">
-            <Link className="profileProductName" to={`/product/${product._id}`}>
-              <div>
-                <h3>{product.name}</h3>
-                <img
-                  className="productImg"
-                  src={product.image}
-                  alt={product.image}
-                />
-              </div>
-              <div className="product__actions"></div>
-            </Link>
-            {user._id === userProfile._id ? 
+      <div className="userProducts">
+        {userProfile.products?.map((product) => {
+          return (
+            <div className="profileProduct">
+              <Link
+                className="profileProductName"
+                to={`/product/${product._id}`}
+              >
+                <div>
+                  <h3>{product.name}</h3>
+                  <img
+                    className="productImg"
+                    src={product.image}
+                    alt={product.image}
+                  />
+                </div>
+                <div className="product__actions"></div>
+              </Link>
+              {user._id === userProfile._id ? (
+                <div>
+                  <button onClick={() => handleEdit(product._id)}>Edit</button>
+                  <button onClick={() => handleDelete(product._id)}>
+                    Delete
+                  </button>
+                </div>
+              ) : null}
+            </div>
+          );
+        })}
+      </div>
+      <div>
+        <h1>Rented Products</h1>
+        <div className="userRentedProducts">
+          {user._id === userProfile._id ? (
             <div>
-            <button onClick={() => handleEdit(product._id)}>Edit</button>
-            <button onClick={() => handleDelete(product._id)}>Delete</button>
-            </div> : null}
-            
-          </div>
-        );
-      })}
-      {user._id === userProfile._id ? (
-        <div>
-          <h1>Rented Products</h1>
-          {userProfile.rentedProducts.map((productRented) => {
-            return <h3>{productRented.name}</h3>;
-          })}
-        </div>
-      ) : null}
+              {userProfile.rentedProducts.map((productRented) => {
+                return (
+                  <div className="profileProduct">
+                    <Link
+                      className="profileProductName"
+                      to={`/product/${productRented._id}`}
+                    >
+                      <div>
+                        <h3>{productRented.name}</h3>
+                        <img
+                          className="productImg"
+                          src={productRented.image}
+                          alt={productRented.image}
+                        />
+                      </div>
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
+          ) : null}
+        </div>  
+      </div>
     </div>
   );
 }
-
