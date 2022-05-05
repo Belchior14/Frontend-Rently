@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FileUpload } from "components/FileUpload";
 
-export function EditProfile() {
+export function EditProfile({setTest}) {
   const navigate = useNavigate();
   const [theUser, setTheUser] = useState();
   const [image, setImage] = useState("");
@@ -21,29 +21,29 @@ export function EditProfile() {
     }
   };
 
-  const saveUser = async () => {
+  const saveUser = async (imagePath) => {
     try {
+      console.log(image)
       const response = await client.put(
-        `profile/edit/${window.location.href.split("/").at(-1)}`,
+        `/profile/edit/${window.location.href.split("/").at(-1)}`,
         {
-          image: image,
+          image: imagePath,
         }
-      );
+      )
+      setTest(response.data)
     } catch (error) {
       console.log(error);
     }
   };
 
-  const handleSave = async (e) => {
+  const handleSave =  (e) => {
     e.preventDefault();
-    saveUser();
-    console.log(image)
     navigate(`/profile/${user._id}`);
   };
 
   return <div>
       <form onSubmit={handleSave}>
-      <FileUpload setImage={setImage} />
+      <FileUpload setTest={setTest} saveUser={saveUser} setImage={setImage} />
               <button type="submit">Change Image</button>
       </form>
   </div>;

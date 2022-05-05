@@ -2,6 +2,7 @@ import { AuthContext } from "context";
 import { useContext, useState } from "react";
 import { client } from "client";
 import { useNavigate } from "react-router-dom";
+import "./addMoney.css"
 
 export function AddMoneyOption() {
   const { user, getUser } = useContext(AuthContext);
@@ -21,7 +22,7 @@ export function AddMoneyOption() {
   };
   return (
     <div>
-      <button onClick={handleAddMoney}>Charge your account</button>
+      <button className="addMoneyBtn" onClick={handleAddMoney}>Charge your account</button>
       
     </div>
   );

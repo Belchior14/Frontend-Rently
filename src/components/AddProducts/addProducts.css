@@ -1,7 +1,6 @@
 .addProductsDiv{
     display: flex;
-    width: 40%;
-    padding: 15px;
+    height: 700px;
     margin: 100px 390px;
     position: relative;
     display: flex;

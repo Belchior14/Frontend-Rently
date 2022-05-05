@@ -13,6 +13,8 @@ export function ProfileShow() {
   const [userProfile, setUserProfile] = useState("");
   const { user } = useContext(AuthContext);
   const [products, setProducts] = useState([]);
+  const [test , setTest] = useState(false)
+  
 
   const oneUser = async () => {
     try {
@@ -43,10 +45,11 @@ export function ProfileShow() {
 
   useEffect(() => {
     oneUser();
-  }, [{ id, products }]);
+  }, [test]);
 
   return (
     <div className="userProfile">
+      {console.log(userProfile)}
       <div className="userInfo">
       <h2>
         {userProfile.firstName} {userProfile.lastName}
@@ -57,7 +60,7 @@ export function ProfileShow() {
         src={userProfile.image}
         alt={userProfile.image}
       />
-      <EditProfile />
+      <EditProfile setTest={setTest} />
       <div>
       {user._id === userProfile._id ? <AddMoneyOption /> : null}
       </div>

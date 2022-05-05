@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { client } from 'client'
 
-export function FileUpload({setImage}) {
+export function FileUpload({setImage , saveUser,setTest}) {
   const uploadImage = async (image) => {
     return await client.post("upload", image)
       .then(res => res.data)
@@ -13,7 +13,12 @@ export function FileUpload({setImage}) {
     file.append("myFile", e.target.files[0])
     
     uploadImage(file)
-      .then(response => setImage(response.path))
+      .then(response => {console.log(response) 
+        setImage(response.path)
+        saveUser(response.path)
+        
+      }
+        )
       .catch(err => console.log("Error while uploading the file: ", err))
   }
 
