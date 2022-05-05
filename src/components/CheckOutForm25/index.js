@@ -10,8 +10,9 @@ export function CheckoutForm() {
 
   const [money, setMoney] = useState("helloTest");
 
-  const handleAddMoney = async () => {
+  const handleAddMoney = async (e) => {
     try {
+      e.preventDefault()
       const response = await client.put(`/profile/${user._id}`);
       setMoney(response.data.money);
       navigate(`/profile/${user._id}`);
