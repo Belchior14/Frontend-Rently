@@ -9,7 +9,6 @@ import books from "./books.png";
 import steps from "./Steps.png";
 import confetti from "./confetti.png";
 
-
 export function Home() {
 
   return (
@@ -76,6 +75,7 @@ export function Home() {
           <img className="stepsImage" src={steps} alt="steps to rent" />
         </div>
         <div>
+
           <Link to="/signup">
             <button className="Btn">Start Renting</button>
           </Link>
