@@ -45,7 +45,7 @@ gap: 30px;
     align-items: center;
   }
   
-  .signupbtn:hover {
+  .addProductBTN:hover {
     background: linear-gradient(rgb(10, 193, 202), rgb(5, 97, 102));
 }
 .productImageBTN {

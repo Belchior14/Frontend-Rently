@@ -70,10 +70,13 @@ export function EditProductForm() {
   }, [product]);
 
   return (
-    <div>
+    <div className="editProductsDiv">
       {product && (
         <form onSubmit={handleSave}>
-          <div className="editProductForm">
+          <div className="addProducth2">
+            <h2>Edit product</h2>
+            
+            <div className="addProductForm">
           <label>Category:</label>
           <select
             value={newCategory}
@@ -125,11 +128,12 @@ export function EditProductForm() {
             value={newCountry}
             onChange={(event) => setNewCountry(event.target.value)}
           />
-          <button type="submit">Edit Product</button>
+          <button className="editProductBTN" type="submit">Edit Product</button>
           </div>
-          
+          </div>
         </form>
       )}
     </div>
+    
   );
 }

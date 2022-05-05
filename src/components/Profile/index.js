@@ -13,8 +13,7 @@ export function ProfileShow() {
   const [userProfile, setUserProfile] = useState("");
   const { user } = useContext(AuthContext);
   const [products, setProducts] = useState([]);
-  const [test , setTest] = useState(false)
-  
+  const [test, setTest] = useState(false);
 
   const oneUser = async () => {
     try {
@@ -45,26 +44,23 @@ export function ProfileShow() {
 
   useEffect(() => {
     oneUser();
-  }, [test]);
+  }, [{ test, products }]);
 
   return (
     <div className="userProfile">
       {console.log(userProfile)}
       <div className="userInfo">
-      <h2>
-        {userProfile.firstName} {userProfile.lastName}
-        {user._id === userProfile._id ? ` - ${userProfile.money}€` : null}
-      </h2>
-      <img
-        className="userProfileImage"
-        src={userProfile.image}
-        alt={userProfile.image}
-      />
-      <EditProfile setTest={setTest} />
-      <div>
-      {user._id === userProfile._id ? <AddMoneyOption /> : null}
-      </div>
-
+        <h2>
+          {userProfile.firstName} {userProfile.lastName}
+          {user._id === userProfile._id ? ` - ${userProfile.money}€` : null}
+        </h2>
+        <img
+          className="userProfileImage"
+          src={userProfile.image}
+          alt={userProfile.image}
+        />
+        <EditProfile setTest={setTest} />
+        <div>{user._id === userProfile._id ? <AddMoneyOption /> : null}</div>
       </div>
 
       <h1>Products for rent</h1>
@@ -87,11 +83,17 @@ export function ProfileShow() {
                 <div className="product__actions"></div>
               </Link>
               {user._id === userProfile._id ? (
-                <div>
-                  <button onClick={() => handleEdit(product._id)}>Edit</button>
-                  <button onClick={() => handleDelete(product._id)}>
-                    Delete
-                  </button>
+                <div className="buttons">
+                  <div>
+                    <button className="theButtons" onClick={() => handleEdit(product._id)}>
+                      Edit
+                    </button>
+                  </div>
+                  <div>
+                    <button className="theButtons" onClick={() => handleDelete(product._id)}>
+                      Delete
+                    </button>
+                  </div>
                 </div>
               ) : null}
             </div>
@@ -124,7 +126,7 @@ export function ProfileShow() {
               })}
             </div>
           ) : null}
-        </div>  
+        </div>
       </div>
     </div>
   );
