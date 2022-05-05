@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "context";
 import "./navbar.css";
 
+
 export function Navbar() {
   const { user, logout } = useContext(AuthContext);
   return (

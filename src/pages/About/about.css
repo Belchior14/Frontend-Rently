@@ -22,3 +22,12 @@
     display: flex;
     justify-content: space-around;
 }
+
+.teamMemberPicture{
+    width: 200px;
+}
+
+.zoeyTeam , .bandidoTeam , .cristinaTeam , .belchiorTeam{
+    display: flex;
+    gap: 20px;
+}

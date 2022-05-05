@@ -17,11 +17,9 @@ export function Home() {
       <div className="heroSection">
         <div className="mainQuote">
           <h1 className="h1Home">
-            Rent your favorite
-            <br />
-            products while spending
-            <br />
-            half of the money
+          Gain money with your unused products
+          <br/>
+           or rent something you need for a fair price!
           </h1>
           <Link to="/signup">
             <button className="Btn">Start Renting</button>

@@ -23,6 +23,7 @@
 
 .h1Home{
     text-align: center;
+    
 }
 
 .heroPicture{
@@ -116,12 +117,14 @@
       justify-content: center;
       align-items: center;
       gap: 10px;
+      font-size: 50px;
   }
 
   .confetti{
-     width: 30px;
-     height: 30px;
+     width: 40px;
+     height: 40px;
   }
+
 
 
         

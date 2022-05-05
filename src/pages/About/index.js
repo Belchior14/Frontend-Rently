@@ -1,4 +1,7 @@
 import "./about.css";
+import  zoey  from "./zoey.jpg";
+import cristina from "./cristina.png"
+import bandido from "./bandido.png"
 
 export function About() {
   return (
@@ -52,41 +55,48 @@ export function About() {
           </div>
         </div>
         <div className="cristinaTeam">
-          <div className="teamMemberPicture"></div>
+          <div>
+          <img className="teamMemberPicture" src={cristina} alt={cristina} />
+          </div>
           <div className="teamMemberInfo">
             <p>
               <b>Name:</b> Cristina Quijano
             </p>
             <p>
-              <b>Age:</b> ??
+              <b>Age: </b>
+              <span>&#128563;</span>
             </p>
             <p>
               <b>Nationality:</b> Colombian
             </p>
             <p>
-              <b>Favorite movie:</b> ??
+              <b>Favorite movie:</b> Inception
             </p>
           </div>
         </div>
         <div className="bandidoTeam">
-          <div className="teamMemberPicture"></div>
+          <div >
+          <img className="teamMemberPicture" src={bandido} alt={bandido} />
+          </div>
           <div className="teamMemberInfo">
             <p>
               <b>Name:</b> Bandido
             </p>
             <p>
-              <b>Age:</b> 1
+              <b>Age:</b> 1.5
             </p>
             <p>
-              <b>Nationality:</b> Colombian
+              <b>Nationality:</b> Netherlands
             </p>
             <p>
-              <b>Favorite Movie:</b> ??
+              <b>Favorite Movie:</b> Dog Time
             </p>
           </div>
         </div>
         <div className="zoeyTeam">
-          <div className="teamMemberPicture"></div>
+          <div >
+            <img className="teamMemberPicture" src={zoey} alt={zoey} />
+          </div>
           <div className="teamMemberInfo">
             <p>
               <b>Name:</b> Zoey
@@ -104,13 +114,5 @@ export function About() {
         </div>
       </div>
     </div>
-
-
-
-      
-
-   
-
-    
-  )
+  );
 }
