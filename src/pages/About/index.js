@@ -3,10 +3,14 @@ import  zoey  from "./zoey.jpg";
 import cristina from "./cristina.png"
 import bandido from "./bandido.png"
 import belchior from "./belchior.jpg"
+import logo from "./modernLogo.png"
 
 export function About() {
   return (
     <div className="aboutPage">
+      <div className="divLogoImage">
+        <img className="logoImage" src={logo} alt={logo}/>
+      </div>
       <div className="visionTitle">
         <h1>Vision</h1>
       </div>

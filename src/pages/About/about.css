@@ -1,9 +1,20 @@
 .aboutPage{
-    margin-top: 200px;
+    margin-top: 125px;
+    margin-bottom: 50px;
+}
+
+.divLogoImage{
+    display: flex;
+    justify-content: center;
+}
+
+.logoImage{
+    width: 300px;
 }
 
 .visionTitle , .teamTitle{
     text-align: center;
+    margin-top: 50px;
 }
 
 .vision{
