@@ -2,6 +2,7 @@ import "./about.css";
 import  zoey  from "./zoey.jpg";
 import cristina from "./cristina.png"
 import bandido from "./bandido.png"
+import belchior from "./belchior.jpg"
 
 export function About() {
   return (
@@ -38,7 +39,9 @@ export function About() {
       </div>
       <div className="team">
         <div className="belchiorTeam">
-          <div className="teamMemberPicture"></div>
+          <div>
+          <img className="teamMemberPicture" src={belchior} alt={belchior} />
+          </div>
           <div className="teamMemberInfo">
             <p>
               <b>Name:</b> Belchior Fontão

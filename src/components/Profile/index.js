@@ -48,7 +48,6 @@ export function ProfileShow() {
 
   return (
     <div className="userProfile">
-      {console.log(userProfile)}
       <div className="userInfo">
         <h2>
           {userProfile.firstName} {userProfile.lastName}

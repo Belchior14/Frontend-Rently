@@ -56,6 +56,7 @@ export function SingleProductShow() {
                   <h3> {product.price}€</h3>
                   <h3>
                     Location: {product.city}, {product.country}
+                    {console.log(user)}
                   </h3>
                 </div>
               </div>
@@ -63,7 +64,7 @@ export function SingleProductShow() {
               {product.rented === false && product.user._id !== user._id && (
                 <RentProductButton />
               )}
-              {product.rented === true &&
+              {
                 user.rentedProducts.includes(product._id) && (
                   <UnrentProductButton />
                 )}
