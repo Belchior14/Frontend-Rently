@@ -93,7 +93,7 @@ export function About() {
               <b>Age:</b> 1.5
             </p>
             <p>
-              <b>Nationality:</b> Netherlands
+              <b>Nationality:</b> Dutch
             </p>
             <p>
               <b>Favorite Movie:</b> Dog Time
