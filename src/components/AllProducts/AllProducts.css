@@ -4,7 +4,8 @@
 
 .allProfileProducts{
     display: flex;
-    justify-content: space-evenly;
+    gap: 80px;
+    flex-wrap: wrap;
  
 }
 
