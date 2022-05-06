@@ -2,7 +2,7 @@ import { client } from "client";
 import { AuthContext } from "context";
 import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import "./editProduct.css"
+import "./editProduct.css";
 
 export function EditProductForm() {
   const navigate = useNavigate();
@@ -75,65 +75,68 @@ export function EditProductForm() {
         <form onSubmit={handleSave}>
           <div className="addProducth2">
             <h2>Edit product</h2>
-            
+
             <div className="addProductForm">
-          <label>Category:</label>
-          <select
-            value={newCategory}
-            onChange={(e) => setNewCategory(e.target.value)}
-          >
-            <option value="Technology">Technology</option>
-            <option value="Sports">Sports</option>
-            <option option="Home">Home</option>
-            <option option="Leisure">Leisure</option>
-            <option option="Others">Others</option>
-          </select>
-          <label>Product Name:</label>
-          <input
-            type="text"
-            id="name"
-            value={newName}
-            onChange={(event) => setNewName(event.target.value)}
-          />
-          <label>Description:</label>
-          <textarea          type="text"
-            id="description"
-            value={newDescription}
-            onChange={(event) => setNewDescription(event.target.value)}/>
-          <label>Image:</label>
-          <input
-            type="text"
-            id="image"
-            value={newImage}
-            onChange={(event) => setNewImage(event.target.value)}
-          />
-          <label>Price:</label>
-          <input
-            type="number"
-            id="price"
-            value={newPrice}
-            onChange={(event) => setNewPrice(event.target.value)}
-          />
-          <label>City:</label>
-          <input
-            type="text"
-            id="city"
-            value={newCity}
-            onChange={(event) => setNewCity(event.target.value)}
-          />
-          <label>Country:</label>
-          <input
-            type="text"
-            id="country"
-            value={newCountry}
-            onChange={(event) => setNewCountry(event.target.value)}
-          />
-          <button className="editProductBTN" type="submit">Edit Product</button>
-          </div>
+              <label>Category:</label>
+              <select
+                value={newCategory}
+                onChange={(e) => setNewCategory(e.target.value)}
+              >
+                <option value="Technology">Technology</option>
+                <option value="Sports">Sports</option>
+                <option option="Home">Home</option>
+                <option option="Leisure">Leisure</option>
+                <option option="Others">Others</option>
+              </select>
+              <label>Product Name:</label>
+              <input
+                type="text"
+                id="name"
+                value={newName}
+                onChange={(event) => setNewName(event.target.value)}
+              />
+              <label>Description:</label>
+              <textarea
+                type="text"
+                id="description"
+                value={newDescription}
+                onChange={(event) => setNewDescription(event.target.value)}
+              />
+              <label>Image:</label>
+              <input
+                type="text"
+                id="image"
+                value={newImage}
+                onChange={(event) => setNewImage(event.target.value)}
+              />
+              <label>Price:</label>
+              <input
+                type="number"
+                id="price"
+                value={newPrice}
+                onChange={(event) => setNewPrice(event.target.value)}
+              />
+              <label>City:</label>
+              <input
+                type="text"
+                id="city"
+                value={newCity}
+                onChange={(event) => setNewCity(event.target.value)}
+              />
+              <label>Country:</label>
+              <input
+                type="text"
+                id="country"
+                value={newCountry}
+                onChange={(event) => setNewCountry(event.target.value)}
+              />
+              <button className="editProductBTN" type="submit">
+                Edit Product
+              </button>
+            </div>
           </div>
         </form>
       )}
     </div>
-    
   );
 }

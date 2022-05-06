@@ -40,7 +40,7 @@ export function SingleProductShow() {
 
   useEffect(() => {
     oneProduct();
-    oneUser()
+    oneUser();
   }, [other]);
 
   return (
@@ -61,7 +61,10 @@ export function SingleProductShow() {
                   />
                 </div>
                 <div className="theProductDetails">
-                  <Link className="h3UserProduct" to={`/profile/${userOfTheProduct._id}`}>
+                  <Link
+                    className="h3UserProduct"
+                    to={`/profile/${userOfTheProduct._id}`}
+                  >
                     <h3>{userOfTheProduct.firstName}</h3>
                   </Link>
                   <h3> {product.price}€</h3>
@@ -74,17 +77,17 @@ export function SingleProductShow() {
               {product.rented === false && product.user._id !== user._id && (
                 <RentProductButton />
               )}
-              {(product.rented === true && userProfile.rentedProducts.filter( theProduct => theProduct._id === product._id) && userProfile._id !== product.user._id  )
-                 && (
-                  <UnrentProductButton />
-                )}
-              {/*               <button onClick={() => setRentedProduct(true)}>display</button> */}
+              {product.rented === true &&
+                userProfile.rentedProducts.filter(
+                  (theProduct) => theProduct._id === product._id
+                ) &&
+                userProfile._id !== product.user._id && <UnrentProductButton />}
             </div>
             <div className="comments">
               <div className="addComment">
                 <h1> Add a Comment</h1>
               </div>
-              <AddCommentsForm setOther = {setOther} />
+              <AddCommentsForm setOther={setOther} />
               <div>
                 {comments.map((comment) => {
                   return (

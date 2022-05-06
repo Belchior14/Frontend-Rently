@@ -2,7 +2,7 @@ import { client } from "client";
 import { useState } from "react";
 import "./addComments.css";
 
-export function AddCommentsForm({setOther}) {
+export function AddCommentsForm({ setOther }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -25,7 +25,7 @@ export function AddCommentsForm({setOther}) {
     addComment(title, description);
     setTitle("");
     setDescription("");
-    setOther(true)
+    setOther(true);
   };
 
   return (
@@ -33,7 +33,7 @@ export function AddCommentsForm({setOther}) {
       <form className="addComment" onSubmit={handleSubmit}>
         <label className="titleComment">Title:</label>
         <input
-        className="addTitle"
+          className="addTitle"
           type="text"
           id="title"
           value={title}
@@ -43,7 +43,7 @@ export function AddCommentsForm({setOther}) {
         />
         <label className="descriptionComment">Description:</label>
         <textarea
-        className="addDescription"
+          className="addDescription"
           type="text"
           id="description"
           value={description}
@@ -51,7 +51,9 @@ export function AddCommentsForm({setOther}) {
             setDescription(e.target.value);
           }}
         />
-        <button className="buttonComments" disabled={!(title && description)}>Add comment</button>
+        <button className="buttonComments" disabled={!(title && description)}>
+          Add comment
+        </button>
       </form>
       <div></div>
     </div>

@@ -12,12 +12,12 @@ export function SignupForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     signup(email, password, firstName, lastName, username);
-      };
+  };
   return (
     <div className="signupDiv">
       <div>
         <form className="signupForm" onSubmit={handleSubmit}>
-        <h2>Create an Account</h2>
+          <h2>Create an Account</h2>
           <label className="firstName"></label>
           <input
             type="text"
@@ -62,19 +62,25 @@ export function SignupForm() {
           <input
             type="password"
             id="password"
-            placeholder="Password"/* 6 characters and contain at least one number, one lowercase and one uppercase letter */
+            placeholder="Password"
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
             }}
           />
           <p className="signupAlert">
-          *The password must be at least 6 characters 
+            *The password must be at least 6 characters and contain at least,
+            one lowercase and one uppercase letter
           </p>
-          <button className="signupbtn" disabled={!(email && password && firstName && lastName && username)}>Signup</button>
+          <button
+            className="signupbtn"
+            disabled={!(email && password && firstName && lastName && username)}
+          >
+            Signup
+          </button>
           <p className="loginLink">
-          Already have an account? <Link to="/login">Click here</Link>
-        </p>
+            Already have an account? <Link to="/login">Click here</Link>
+          </p>
         </form>
       </div>
     </div>
