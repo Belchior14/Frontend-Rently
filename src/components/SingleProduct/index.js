@@ -11,9 +11,19 @@ export function SingleProductShow() {
   const { user } = useContext(AuthContext);
   const [product, setProduct] = useState(null);
   const [userOfTheProduct, setUserOfTheProduct] = useState("");
+  const [userProfile, setUserProfile] = useState("");
   const [rentedProduct, setRentedProduct] = useState(false);
   const [comments, setComments] = useState([]);
   const [other, setOther] = useState(false);
+
+  const oneUser = async () => {
+    try {
+      const response = await client.get(`/profile/${user._id}`);
+      setUserProfile(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const oneProduct = async () => {
     try {
@@ -30,6 +40,7 @@ export function SingleProductShow() {
 
   useEffect(() => {
     oneProduct();
+    oneUser()
   }, [other]);
 
   return (
@@ -56,7 +67,6 @@ export function SingleProductShow() {
                   <h3> {product.price}€</h3>
                   <h3>
                     Location: {product.city}, {product.country}
-                    {console.log(user)}
                   </h3>
                 </div>
               </div>
@@ -64,8 +74,8 @@ export function SingleProductShow() {
               {product.rented === false && product.user._id !== user._id && (
                 <RentProductButton />
               )}
-              {
-                user.rentedProducts.includes(product._id) && (
+              {(product.rented === true && userProfile.rentedProducts.filter( theProduct => theProduct._id === product._id) && userProfile._id !== product.user._id  )
+                 && (
                   <UnrentProductButton />
                 )}
               {/*               <button onClick={() => setRentedProduct(true)}>display</button> */}
@@ -80,7 +90,6 @@ export function SingleProductShow() {
                   return (
                     <div key={comment.id} className="theComments">
                       <Link to={`/profile/${comment.user}`}>
-                        {console.log(comment)}
                         <h5>Comment by: {comment.username}</h5>
                       </Link>
 
